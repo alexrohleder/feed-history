@@ -22,10 +22,10 @@ type Feed = {
 type FeedEntry = {
   type: "Odds change" | "Fixture change";
   timestamp: number;
-  status: string;
-  score: string;
+  status?: string;
+  score?: string;
   statistics?: Record<string, string>;
-  markets: Record<string, Market>;
+  markets?: Record<string, Market>;
 };
 
 type Market = {

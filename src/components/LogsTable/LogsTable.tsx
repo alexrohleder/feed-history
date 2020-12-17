@@ -41,7 +41,7 @@ function LogsTable() {
               <th title={market.name}>{market.name}</th>
               {entries.map((entry) => {
                 if (entry.type === "Odds change") {
-                  if (entry.markets[market.id]) {
+                  if (entry.markets?.[market.id]) {
                     return (
                       <LogsTableOutcomes
                         key={entry.timestamp}
