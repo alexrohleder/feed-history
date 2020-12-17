@@ -1,0 +1,18 @@
+.outcome {
+  display: grid;
+  align-items: center;
+  height: 25px;
+  grid-template-columns: 1.5fr 1fr;
+
+  &__name,
+  &__odds {
+    padding: 0.25rem;
+  }
+
+  &__name {
+    overflow: hidden;
+    background-color: rgba(220, 220, 220, 0.5);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

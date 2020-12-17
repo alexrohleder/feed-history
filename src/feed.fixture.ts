@@ -4,7 +4,7 @@ const feed: Feed = {
   entries: [
     {
       type: "Odds change",
-      timestamp: 1607947226,
+      timestamp: 1608227771323,
       status: "1st half",
       score: "0 — 0",
       statistics: {
@@ -58,5 +58,12 @@ const feed: Feed = {
     },
   ],
 };
+
+for (let i = 1000; i < 100000; i += 1000) {
+  feed.entries.push({
+    ...feed.entries[0],
+    timestamp: feed.entries[0].timestamp + i,
+  });
+}
 
 export default feed;

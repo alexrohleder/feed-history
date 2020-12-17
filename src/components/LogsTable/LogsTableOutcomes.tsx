@@ -1,3 +1,5 @@
+import "./LogsTableOutcomes.scss";
+
 type Props = {
   status: MarketStatus;
   outcomes: MarketOutcome[];
@@ -5,8 +7,13 @@ type Props = {
 
 function LogsTableOutcomes(props: Props) {
   return (
-    <td className="outcome">
-      ...................................................
+    <td>
+      {props.outcomes.map((outcome) => (
+        <div className="outcome" key={outcome.name}>
+          <div className="outcome__name">{outcome.name}</div>
+          <div className="outcome__odds">{outcome.odds}</div>
+        </div>
+      ))}
     </td>
   );
 }

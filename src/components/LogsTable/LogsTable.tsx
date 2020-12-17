@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import { toDateTime } from "../../lib/timestamp";
-import "./LogsTable.scss";
 import LogsTableOutcomes from "./LogsTableOutcomes";
+import "./LogsTable.scss";
 
 function LogsTable() {
   const event = useSWR<SportEvent>("event");
@@ -38,23 +38,21 @@ function LogsTable() {
         <tbody>
           {markets.map((market) => (
             <tr key={market.id}>
-              <th>{market.name}</th>
+              <th title={market.name}>{market.name}</th>
               {entries.map((entry) => {
                 if (entry.type === "Odds change") {
-                  if (!entry.markets[market.id]) {
-                    // this happens on CODDS feed history
-                    return <td />;
+                  if (entry.markets[market.id]) {
+                    return (
+                      <LogsTableOutcomes
+                        key={entry.timestamp}
+                        status={entry.markets[market.id].status}
+                        outcomes={entry.markets[market.id].outcomes}
+                      />
+                    );
                   }
-
-                  return (
-                    <LogsTableOutcomes
-                      status={entry.markets[market.id].status}
-                      outcomes={entry.markets[market.id].outcomes}
-                    />
-                  );
                 }
 
-                return <td />;
+                return <td key={entry.timestamp} />;
               })}
             </tr>
           ))}

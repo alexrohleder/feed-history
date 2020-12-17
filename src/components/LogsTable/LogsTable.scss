@@ -42,13 +42,17 @@
       position: sticky;
       top: -1px;
       padding: 0;
-      z-index: 200;
+      z-index: 2;
       border-bottom: 0;
 
       div {
         padding: 0.25rem;
         border-bottom: 1px solid black;
       }
+    }
+
+    thead th:first-child .resizeable {
+      min-width: 195px;
     }
 
     tbody tr:first-child th,
@@ -60,6 +64,13 @@
       text-align: left;
       text-overflow: ellipsis;
       overflow: hidden;
+    }
+
+    tbody tr th {
+      left: 0;
+      z-index: 1;
+      position: sticky;
+      white-space: pre-wrap;
     }
   }
 }
