@@ -6,6 +6,7 @@ const feed: Feed = {
       type: "Odds change",
       timestamp: 1607947226,
       status: "1st half",
+      score: "0 — 0",
       statistics: {
         yellow_cards: "home: 0 — away: 0",
         red_cards: "home: 0 — away: 0",
@@ -14,8 +15,7 @@ const feed: Feed = {
       },
       markets: {
         "1": {
-          name: "Winner",
-          status: MarketStatus.ACTIVE,
+          status: 0,
           outcomes: [
             {
               name: "Denmark (Teok)",
@@ -35,8 +35,7 @@ const feed: Feed = {
           ],
         },
         "7 score=0:0": {
-          name: "Goals Score 0:0",
-          status: MarketStatus.ACTIVE,
+          status: 0,
           outcomes: [
             {
               name: "Denmark (Teok)",

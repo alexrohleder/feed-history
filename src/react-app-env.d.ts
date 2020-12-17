@@ -20,15 +20,15 @@ type Feed = {
 };
 
 type FeedEntry = {
-  type: string;
+  type: "Odds change" | "Fixture change";
   timestamp: number;
   status: string;
+  score: string;
   statistics?: Record<string, string>;
   markets: Record<string, Market>;
 };
 
 type Market = {
-  name: string;
   status: MarketStatus;
   outcomes: MarketOutcome[];
 };
