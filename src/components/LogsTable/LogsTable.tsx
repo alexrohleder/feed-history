@@ -52,6 +52,8 @@ function LogsTable() {
                     return (
                       <LogsTableOutcomes
                         key={entry.timestamp}
+                        marketId={market.id}
+                        timestamp={entry.timestamp}
                         status={entry.markets[market.id].status}
                         outcomes={entry.markets[market.id].outcomes}
                       />

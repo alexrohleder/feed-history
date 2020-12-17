@@ -20,7 +20,7 @@ type Feed = {
 };
 
 type FeedEntry = {
-  type: "Odds change" | "Fixture change";
+  type: "Odds change" | "Fixture change" | "Bet stop";
   timestamp: number;
   status?: string;
   score?: string;
@@ -42,5 +42,6 @@ enum MarketStatus {
 type MarketOutcome = {
   name: string;
   odds: number;
+  changedFromOdds?: number;
   active: boolean;
 };

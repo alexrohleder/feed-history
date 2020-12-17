@@ -11,8 +11,13 @@
 
   &__name {
     overflow: hidden;
-    background: rgba(229, 231, 235, 0.5);
+    background: #f3f4f6;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+
+  &.changed,
+  &.changed &__name {
+    background-color: #fef3c7;
   }
 }

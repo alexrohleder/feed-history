@@ -3,60 +3,6 @@ const feed: Feed = {
   totalPages: 9,
   entries: [
     {
-      type: "Odds change",
-      timestamp: 1608227771323,
-      status: "1st half",
-      score: "home 0 — away 0",
-      statistics: {
-        yellow_cards: "home: 0 — away: 0",
-        red_cards: "home: 0 — away: 0",
-        yellow_red_cards: "home: 0 — away: 0",
-        corners: "home: 1 — away: 0",
-      },
-      markets: {
-        "1": {
-          status: 0,
-          outcomes: [
-            {
-              name: "Denmark (Teok)",
-              odds: 1.6,
-              active: true,
-            },
-            {
-              name: "draw",
-              odds: 5.25,
-              active: true,
-            },
-            {
-              name: "Ivory Coast (Vasm)",
-              odds: 4,
-              active: true,
-            },
-          ],
-        },
-        "7 score=0:0": {
-          status: 0,
-          outcomes: [
-            {
-              name: "Denmark (Teok)",
-              odds: 1.6,
-              active: true,
-            },
-            {
-              name: "draw",
-              odds: 5.25,
-              active: true,
-            },
-            {
-              name: "Ivory Coast (Vasm)",
-              odds: 4,
-              active: true,
-            },
-          ],
-        },
-      },
-    },
-    {
       type: "Fixture change",
       timestamp: 1609835641711,
     },
@@ -69,6 +15,12 @@ const feed: Feed = {
       timestamp: 1609835718539,
       status: "1st half",
       score: "home 0 — away 0",
+      statistics: {
+        yellow_cards: "home: 0 — away: 0",
+        red_cards: "home: 0 — away: 0",
+        yellow_red_cards: "home: 0 — away: 0",
+        corners: "home: 1 — away: 0",
+      },
       markets: {
         "1": {
           status: 1,
@@ -76,16 +28,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "draw",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -96,16 +51,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.14,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 2.25,
             },
           ],
@@ -116,11 +74,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.25,
             },
           ],
@@ -131,11 +91,13 @@ const feed: Feed = {
             {
               active: true,
               name: "draw",
+
               odds: 2.15,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 1.65,
             },
           ],
@@ -146,11 +108,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.9,
             },
           ],
@@ -161,11 +125,13 @@ const feed: Feed = {
             {
               active: true,
               name: "odd",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "even",
+
               odds: 1.9,
             },
           ],
@@ -176,16 +142,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.35,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.95,
             },
           ],
@@ -196,16 +165,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.3,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 1.8,
             },
           ],
@@ -216,11 +188,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.4,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.85,
             },
           ],
@@ -231,11 +205,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 3.85,
             },
             {
               active: true,
               name: "no",
+
               odds: 1.25,
             },
           ],
@@ -246,11 +222,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "no",
+
               odds: 2.3,
             },
           ],
@@ -261,11 +239,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.16,
             },
             {
               active: true,
               name: "no",
+
               odds: 4.85,
             },
           ],
@@ -276,16 +256,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "draw",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -296,16 +279,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.55,
             },
             {
               active: true,
               name: "none",
+
               odds: 88,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.4,
             },
           ],
@@ -316,16 +302,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:2)",
+
               odds: 3.9,
             },
             {
               active: true,
               name: "draw (0:2)",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:2)",
+
               odds: 1.6,
             },
           ],
@@ -336,16 +325,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:3)",
+
               odds: 7.25,
             },
             {
               active: true,
               name: "draw (0:3)",
+
               odds: 7.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:3)",
+
               odds: 1.25,
             },
           ],
@@ -356,16 +348,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 2.3,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 4.7,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 2.35,
             },
           ],
@@ -388,11 +383,13 @@ const feed: Feed = {
             {
               active: true,
               name: "over 4.5",
+
               odds: 2.05,
             },
             {
               active: true,
               name: "under 4.5",
+
               odds: 1.75,
             },
           ],
@@ -407,11 +404,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 4.25",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "over 4.25",
+
               odds: 1.85,
             },
           ],
@@ -422,11 +421,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 1.85,
             },
           ],
@@ -437,11 +438,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 3.5",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "over 3.5",
+
               odds: 3.15,
             },
           ],
@@ -452,11 +455,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 3.75,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.25,
             },
           ],
@@ -467,11 +472,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 4.7,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.18,
             },
           ],
@@ -482,11 +489,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 3.75,
             },
           ],
@@ -497,11 +506,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.85,
             },
           ],
@@ -512,21 +523,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 13.75,
             },
             {
               active: true,
               name: "1",
+
               odds: 4.95,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.55,
             },
             {
               active: true,
               name: "3+",
+
               odds: 1.8,
             },
           ],
@@ -537,21 +552,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 4.9,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.85,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.35,
             },
             {
               active: true,
               name: "3+",
+
               odds: 3.75,
             },
           ],
@@ -562,16 +581,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.35,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.95,
             },
           ],
@@ -582,16 +604,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 3.95,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 3.6,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 1.85,
             },
           ],
@@ -602,16 +627,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:2)",
+
               odds: 10.25,
             },
             {
               active: true,
               name: "draw (0:2)",
+
               odds: 5.75,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:2)",
+
               odds: 1.25,
             },
           ],
@@ -622,11 +650,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (-0.5)",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (+0.5)",
+
               odds: 1.85,
             },
           ],
@@ -637,11 +667,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 2.6,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.5,
             },
           ],
@@ -652,11 +684,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.5,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 2.5,
             },
           ],
@@ -667,11 +701,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.55,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 2.4,
             },
           ],
@@ -682,11 +718,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 2.15,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.7,
             },
           ],
@@ -697,21 +735,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 3.5,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.55,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.7,
             },
             {
               active: true,
               name: "3+",
+
               odds: 6,
             },
           ],
@@ -722,21 +764,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 2.1,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.45,
             },
             {
               active: true,
               name: "2",
+
               odds: 5.75,
             },
             {
               active: true,
               name: "3+",
+
               odds: 17.75,
             },
           ],
@@ -755,16 +801,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "draw",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -775,16 +824,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.14,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 2.25,
             },
           ],
@@ -795,11 +847,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.25,
             },
           ],
@@ -810,11 +864,13 @@ const feed: Feed = {
             {
               active: true,
               name: "draw",
+
               odds: 2.15,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 1.7,
             },
           ],
@@ -825,11 +881,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.9,
             },
           ],
@@ -840,11 +898,13 @@ const feed: Feed = {
             {
               active: true,
               name: "odd",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "even",
+
               odds: 1.9,
             },
           ],
@@ -855,16 +915,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.3,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.95,
             },
           ],
@@ -875,16 +938,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.3,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 1.8,
             },
           ],
@@ -895,11 +961,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.4,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.8,
             },
           ],
@@ -910,11 +978,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 3.85,
             },
             {
               active: true,
               name: "no",
+
               odds: 1.25,
             },
           ],
@@ -925,11 +995,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "no",
+
               odds: 2.3,
             },
           ],
@@ -940,11 +1012,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.18,
             },
             {
               active: true,
               name: "no",
+
               odds: 4.85,
             },
           ],
@@ -955,16 +1029,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "draw",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -975,16 +1052,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.55,
             },
             {
               active: true,
               name: "none",
+
               odds: 84,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.4,
             },
           ],
@@ -995,16 +1075,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:2)",
+
               odds: 3.9,
             },
             {
               active: true,
               name: "draw (0:2)",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:2)",
+
               odds: 1.6,
             },
           ],
@@ -1015,16 +1098,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:3)",
+
               odds: 7.5,
             },
             {
               active: true,
               name: "draw (0:3)",
+
               odds: 7.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:3)",
+
               odds: 1.25,
             },
           ],
@@ -1035,16 +1121,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 2.35,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 4.7,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 2.35,
             },
           ],
@@ -1055,11 +1144,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 4",
+
               odds: 2.1,
             },
             {
               active: true,
               name: "over 4",
+
               odds: 1.7,
             },
           ],
@@ -1086,11 +1177,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 4.25",
+
               odds: 1.85,
             },
             {
               active: true,
               name: "over 4.25",
+
               odds: 1.9,
             },
           ],
@@ -1101,11 +1194,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 1.85,
             },
           ],
@@ -1116,11 +1211,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 3.5",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "over 3.5",
+
               odds: 3.2,
             },
           ],
@@ -1131,11 +1228,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 3.7,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.25,
             },
           ],
@@ -1146,11 +1245,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 4.65,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.18,
             },
           ],
@@ -1161,11 +1262,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 3.8,
             },
           ],
@@ -1176,11 +1279,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.9,
             },
           ],
@@ -1191,21 +1296,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 13.5,
             },
             {
               active: true,
               name: "1",
+
               odds: 4.85,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.5,
             },
             {
               active: true,
               name: "3+",
+
               odds: 1.8,
             },
           ],
@@ -1216,21 +1325,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 4.85,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.85,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.35,
             },
             {
               active: true,
               name: "3+",
+
               odds: 3.8,
             },
           ],
@@ -1241,16 +1354,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.3,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.95,
             },
           ],
@@ -1261,16 +1377,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 4,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 3.6,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 1.85,
             },
           ],
@@ -1281,16 +1400,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:2)",
+
               odds: 10.5,
             },
             {
               active: true,
               name: "draw (0:2)",
+
               odds: 5.75,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:2)",
+
               odds: 1.25,
             },
           ],
@@ -1301,11 +1423,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (-0.5)",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (+0.5)",
+
               odds: 1.85,
             },
           ],
@@ -1316,11 +1440,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 2.55,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.5,
             },
           ],
@@ -1331,11 +1457,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.5,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 2.6,
             },
           ],
@@ -1346,11 +1474,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.55,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 2.45,
             },
           ],
@@ -1361,11 +1491,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 2.15,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.7,
             },
           ],
@@ -1376,21 +1508,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 3.4,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.5,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.7,
             },
             {
               active: true,
               name: "3+",
+
               odds: 6.25,
             },
           ],
@@ -1401,21 +1537,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 2.05,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.45,
             },
             {
               active: true,
               name: "2",
+
               odds: 5.75,
             },
             {
               active: true,
               name: "3+",
+
               odds: 18.5,
             },
           ],
@@ -1434,16 +1574,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "draw",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -1454,16 +1597,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.14,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 2.25,
             },
           ],
@@ -1474,11 +1620,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.25,
             },
           ],
@@ -1489,11 +1637,13 @@ const feed: Feed = {
             {
               active: true,
               name: "draw",
+
               odds: 2.15,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 1.7,
             },
           ],
@@ -1504,11 +1654,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.85,
             },
           ],
@@ -1519,11 +1671,13 @@ const feed: Feed = {
             {
               active: true,
               name: "odd",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "even",
+
               odds: 1.9,
             },
           ],
@@ -1534,16 +1688,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.95,
             },
           ],
@@ -1554,16 +1711,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.3,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 1.8,
             },
           ],
@@ -1574,11 +1734,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.4,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.8,
             },
           ],
@@ -1589,11 +1751,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 3.85,
             },
             {
               active: true,
               name: "no",
+
               odds: 1.25,
             },
           ],
@@ -1604,11 +1768,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "no",
+
               odds: 2.3,
             },
           ],
@@ -1619,11 +1785,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.18,
             },
             {
               active: true,
               name: "no",
+
               odds: 4.8,
             },
           ],
@@ -1634,16 +1802,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "draw",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -1654,16 +1825,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.55,
             },
             {
               active: true,
               name: "none",
+
               odds: 80,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.4,
             },
           ],
@@ -1674,16 +1848,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:2)",
+
               odds: 3.95,
             },
             {
               active: true,
               name: "draw (0:2)",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:2)",
+
               odds: 1.6,
             },
           ],
@@ -1694,16 +1871,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:3)",
+
               odds: 7.5,
             },
             {
               active: true,
               name: "draw (0:3)",
+
               odds: 7.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:3)",
+
               odds: 1.25,
             },
           ],
@@ -1714,16 +1894,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 2.35,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 4.7,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 2.35,
             },
           ],
@@ -1734,11 +1917,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 4",
+
               odds: 2.05,
             },
             {
               active: true,
               name: "over 4",
+
               odds: 1.75,
             },
           ],
@@ -1769,11 +1954,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 4.25",
+
               odds: 1.85,
             },
             {
               active: true,
               name: "over 4.25",
+
               odds: 1.95,
             },
           ],
@@ -1784,11 +1971,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 1.85,
             },
           ],
@@ -1799,11 +1988,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 3.5",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "over 3.5",
+
               odds: 3.25,
             },
           ],
@@ -1814,11 +2005,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 3.6,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.3,
             },
           ],
@@ -1829,11 +2022,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 4.6,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.18,
             },
           ],
@@ -1844,11 +2039,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 3.85,
             },
           ],
@@ -1859,11 +2056,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.85,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.9,
             },
           ],
@@ -1874,21 +2073,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 13.25,
             },
             {
               active: true,
               name: "1",
+
               odds: 4.8,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.5,
             },
             {
               active: true,
               name: "3+",
+
               odds: 1.8,
             },
           ],
@@ -1899,21 +2102,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 4.75,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.85,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.35,
             },
             {
               active: true,
               name: "3+",
+
               odds: 3.9,
             },
           ],
@@ -1924,16 +2131,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.95,
             },
           ],
@@ -1944,16 +2154,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 4.1,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 3.55,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 1.85,
             },
           ],
@@ -1964,16 +2177,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:2)",
+
               odds: 10.75,
             },
             {
               active: true,
               name: "draw (0:2)",
+
               odds: 5.75,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:2)",
+
               odds: 1.25,
             },
           ],
@@ -1984,11 +2200,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (-0.5)",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (+0.5)",
+
               odds: 1.85,
             },
           ],
@@ -1999,11 +2217,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 2.5,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.5,
             },
           ],
@@ -2014,11 +2234,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.45,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 2.65,
             },
           ],
@@ -2029,11 +2251,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.5,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 2.5,
             },
           ],
@@ -2044,11 +2268,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 2.1,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.7,
             },
           ],
@@ -2059,21 +2285,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 3.35,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.5,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.75,
             },
             {
               active: true,
               name: "3+",
+
               odds: 6.5,
             },
           ],
@@ -2084,21 +2314,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 2.05,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.45,
             },
             {
               active: true,
               name: "2",
+
               odds: 6,
             },
             {
               active: true,
               name: "3+",
+
               odds: 19.5,
             },
           ],
@@ -2117,16 +2351,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "draw",
+              changedFromOdds: 5.25,
               odds: 5,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -2137,16 +2374,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.14,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 2.2,
             },
           ],
@@ -2157,11 +2397,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.25,
             },
           ],
@@ -2172,11 +2414,13 @@ const feed: Feed = {
             {
               active: true,
               name: "draw",
+
               odds: 2.15,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 1.7,
             },
           ],
@@ -2187,11 +2431,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.85,
             },
           ],
@@ -2202,11 +2448,13 @@ const feed: Feed = {
             {
               active: true,
               name: "odd",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "even",
+
               odds: 1.9,
             },
           ],
@@ -2217,16 +2465,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 2,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.2,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -2237,16 +2488,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 1.8,
             },
           ],
@@ -2257,11 +2511,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.4,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.8,
             },
           ],
@@ -2272,11 +2528,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 3.85,
             },
             {
               active: true,
               name: "no",
+
               odds: 1.25,
             },
           ],
@@ -2287,11 +2545,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "no",
+
               odds: 2.3,
             },
           ],
@@ -2302,11 +2562,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.18,
             },
             {
               active: true,
               name: "no",
+
               odds: 4.8,
             },
           ],
@@ -2317,16 +2579,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "draw",
+
               odds: 5,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -2337,16 +2602,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.55,
             },
             {
               active: true,
               name: "none",
+
               odds: 76,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.45,
             },
           ],
@@ -2357,16 +2625,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:2)",
+
               odds: 4.05,
             },
             {
               active: true,
               name: "draw (0:2)",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:2)",
+
               odds: 1.6,
             },
           ],
@@ -2377,16 +2648,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:3)",
+
               odds: 7.75,
             },
             {
               active: true,
               name: "draw (0:3)",
+
               odds: 7.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:3)",
+
               odds: 1.25,
             },
           ],
@@ -2397,16 +2671,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 2.35,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 4.6,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 2.3,
             },
           ],
@@ -2417,11 +2694,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 4",
+
               odds: 2,
             },
             {
               active: true,
               name: "over 4",
+
               odds: 1.8,
             },
           ],
@@ -2448,11 +2727,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 4.25",
+
               odds: 1.8,
             },
             {
               active: true,
               name: "over 4.25",
+
               odds: 2,
             },
           ],
@@ -2463,11 +2744,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.85,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 1.9,
             },
           ],
@@ -2478,11 +2761,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 3.5",
+
               odds: 1.3,
             },
             {
               active: true,
               name: "over 3.5",
+
               odds: 3.35,
             },
           ],
@@ -2493,11 +2778,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 3.5,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.3,
             },
           ],
@@ -2508,11 +2795,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 4.5,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.2,
             },
           ],
@@ -2523,11 +2812,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 3.95,
             },
           ],
@@ -2538,11 +2829,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.85,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.95,
             },
           ],
@@ -2553,21 +2846,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 12.75,
             },
             {
               active: true,
               name: "1",
+
               odds: 4.65,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.45,
             },
             {
               active: true,
               name: "3+",
+
               odds: 1.85,
             },
           ],
@@ -2578,21 +2875,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 4.6,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.8,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.35,
             },
             {
               active: true,
               name: "3+",
+
               odds: 4,
             },
           ],
@@ -2603,16 +2904,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 2,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.2,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -2623,16 +2927,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 4.2,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 3.55,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 1.8,
             },
           ],
@@ -2643,16 +2950,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:2)",
+
               odds: 11.5,
             },
             {
               active: true,
               name: "draw (0:2)",
+
               odds: 5.75,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:2)",
+
               odds: 1.22,
             },
           ],
@@ -2663,11 +2973,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (-0.5)",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (+0.5)",
+
               odds: 1.8,
             },
           ],
@@ -2678,11 +2990,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 2.4,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.55,
             },
           ],
@@ -2693,11 +3007,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.4,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 2.8,
             },
           ],
@@ -2708,11 +3024,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.5,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 2.6,
             },
           ],
@@ -2723,11 +3041,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 2.05,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.75,
             },
           ],
@@ -2738,21 +3058,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 3.2,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.5,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.85,
             },
             {
               active: true,
               name: "3+",
+
               odds: 7,
             },
           ],
@@ -2763,21 +3087,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 2,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.45,
             },
             {
               active: true,
               name: "2",
+
               odds: 6.25,
             },
             {
               active: true,
               name: "3+",
+
               odds: 21,
             },
           ],
@@ -2796,16 +3124,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "draw",
+
               odds: 5,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -2816,16 +3147,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.14,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 2.2,
             },
           ],
@@ -2836,11 +3170,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.25,
             },
           ],
@@ -2851,11 +3187,13 @@ const feed: Feed = {
             {
               active: true,
               name: "draw",
+
               odds: 2.15,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 1.7,
             },
           ],
@@ -2866,11 +3204,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.8,
             },
           ],
@@ -2881,11 +3221,13 @@ const feed: Feed = {
             {
               active: true,
               name: "odd",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "even",
+
               odds: 1.9,
             },
           ],
@@ -2896,16 +3238,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 2,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.15,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -2916,16 +3261,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 1.75,
             },
           ],
@@ -2936,11 +3284,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.45,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.8,
             },
           ],
@@ -2951,11 +3301,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 3.85,
             },
             {
               active: true,
               name: "no",
+
               odds: 1.25,
             },
           ],
@@ -2966,11 +3318,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "no",
+
               odds: 2.3,
             },
           ],
@@ -2981,11 +3335,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.18,
             },
             {
               active: true,
               name: "no",
+
               odds: 4.75,
             },
           ],
@@ -2996,16 +3352,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "draw",
+
               odds: 5,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -3016,16 +3375,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.55,
             },
             {
               active: true,
               name: "none",
+
               odds: 68,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.45,
             },
           ],
@@ -3036,16 +3398,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:2)",
+
               odds: 4.1,
             },
             {
               active: true,
               name: "draw (0:2)",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:2)",
+
               odds: 1.55,
             },
           ],
@@ -3056,16 +3421,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:3)",
+
               odds: 8,
             },
             {
               active: true,
               name: "draw (0:3)",
+
               odds: 7.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:3)",
+
               odds: 1.25,
             },
           ],
@@ -3076,16 +3444,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 2.4,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 4.6,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 2.3,
             },
           ],
@@ -3096,11 +3467,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 4",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "over 4",
+
               odds: 1.85,
             },
           ],
@@ -3127,11 +3500,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 4.25",
+
               odds: 1.75,
             },
             {
               active: true,
               name: "over 4.25",
+
               odds: 2.05,
             },
           ],
@@ -3142,11 +3517,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.85,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 1.95,
             },
           ],
@@ -3157,11 +3534,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 3.5",
+
               odds: 1.3,
             },
             {
               active: true,
               name: "over 3.5",
+
               odds: 3.45,
             },
           ],
@@ -3172,11 +3551,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 3.45,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.3,
             },
           ],
@@ -3187,11 +3568,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 4.4,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.2,
             },
           ],
@@ -3202,11 +3585,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 4.05,
             },
           ],
@@ -3217,11 +3602,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.8,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.95,
             },
           ],
@@ -3232,21 +3619,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 12.25,
             },
             {
               active: true,
               name: "1",
+
               odds: 4.55,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.45,
             },
             {
               active: true,
               name: "3+",
+
               odds: 1.9,
             },
           ],
@@ -3257,21 +3648,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 4.5,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.75,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.4,
             },
             {
               active: true,
               name: "3+",
+
               odds: 4.15,
             },
           ],
@@ -3282,16 +3677,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 2,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.15,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -3302,16 +3700,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 4.35,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 3.5,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 1.8,
             },
           ],
@@ -3322,16 +3723,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:2)",
+
               odds: 12,
             },
             {
               active: true,
               name: "draw (0:2)",
+
               odds: 6,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:2)",
+
               odds: 1.22,
             },
           ],
@@ -3342,11 +3746,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (-0.5)",
+
               odds: 2,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (+0.5)",
+
               odds: 1.8,
             },
           ],
@@ -3357,11 +3763,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 2.3,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.6,
             },
           ],
@@ -3372,11 +3780,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.4,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 2.95,
             },
           ],
@@ -3387,11 +3797,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.45,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 2.7,
             },
           ],
@@ -3402,11 +3814,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 2,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.8,
             },
           ],
@@ -3417,21 +3831,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 3.1,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.45,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.9,
             },
             {
               active: true,
               name: "3+",
+
               odds: 7.5,
             },
           ],
@@ -3442,21 +3860,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.45,
             },
             {
               active: true,
               name: "2",
+
               odds: 6.5,
             },
             {
               active: true,
               name: "3+",
+
               odds: 23,
             },
           ],
@@ -3475,16 +3897,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "draw",
+
               odds: 5,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -3495,16 +3920,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.14,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 2.2,
             },
           ],
@@ -3515,11 +3943,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.2,
             },
           ],
@@ -3530,11 +3960,13 @@ const feed: Feed = {
             {
               active: true,
               name: "draw",
+
               odds: 2.1,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 1.7,
             },
           ],
@@ -3545,11 +3977,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.75,
             },
           ],
@@ -3560,11 +3994,13 @@ const feed: Feed = {
             {
               active: true,
               name: "odd",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "even",
+
               odds: 1.9,
             },
           ],
@@ -3575,16 +4011,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 2,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.1,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -3595,16 +4034,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 1.75,
             },
           ],
@@ -3615,11 +4057,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.45,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.8,
             },
           ],
@@ -3630,11 +4074,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 3.85,
             },
             {
               active: true,
               name: "no",
+
               odds: 1.25,
             },
           ],
@@ -3645,11 +4091,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "no",
+
               odds: 2.25,
             },
           ],
@@ -3660,11 +4108,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.18,
             },
             {
               active: true,
               name: "no",
+
               odds: 4.7,
             },
           ],
@@ -3675,16 +4125,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "draw",
+
               odds: 5,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -3695,16 +4148,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.55,
             },
             {
               active: true,
               name: "none",
+
               odds: 68,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.45,
             },
           ],
@@ -3715,16 +4171,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (1:0)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw (1:0)",
+
               odds: 6.75,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (1:0)",
+
               odds: 8.25,
             },
           ],
@@ -3735,16 +4194,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:2)",
+
               odds: 4.15,
             },
             {
               active: true,
               name: "draw (0:2)",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:2)",
+
               odds: 1.55,
             },
           ],
@@ -3759,16 +4221,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 2.4,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 4.55,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 2.3,
             },
           ],
@@ -3779,11 +4244,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 4",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "over 4",
+
               odds: 1.9,
             },
           ],
@@ -3810,11 +4277,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 4.25",
+
               odds: 1.7,
             },
             {
               active: true,
               name: "over 4.25",
+
               odds: 2.1,
             },
           ],
@@ -3825,11 +4294,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.8,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 2,
             },
           ],
@@ -3840,11 +4311,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 3.5",
+
               odds: 1.3,
             },
             {
               active: true,
               name: "over 3.5",
+
               odds: 3.55,
             },
           ],
@@ -3855,11 +4328,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 3.35,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.3,
             },
           ],
@@ -3870,11 +4345,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 4.3,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.2,
             },
           ],
@@ -3885,11 +4362,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 4.2,
             },
           ],
@@ -3900,11 +4379,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.8,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 2,
             },
           ],
@@ -3915,21 +4396,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 11.75,
             },
             {
               active: true,
               name: "1",
+
               odds: 4.45,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.4,
             },
             {
               active: true,
               name: "3+",
+
               odds: 1.95,
             },
           ],
@@ -3940,21 +4425,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 4.4,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.75,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.4,
             },
             {
               active: true,
               name: "3+",
+
               odds: 4.25,
             },
           ],
@@ -3965,16 +4454,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 2,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.1,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -3985,16 +4477,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 4.45,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 3.5,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 1.8,
             },
           ],
@@ -4009,16 +4504,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (1:0)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw (1:0)",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (1:0)",
+
               odds: 12.5,
             },
           ],
@@ -4029,11 +4527,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (-0.5)",
+
               odds: 2,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (+0.5)",
+
               odds: 1.8,
             },
           ],
@@ -4044,11 +4544,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 2.2,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.65,
             },
           ],
@@ -4059,11 +4561,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 3.1,
             },
           ],
@@ -4074,11 +4578,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.45,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 2.8,
             },
           ],
@@ -4089,11 +4595,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 1.95,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.8,
             },
           ],
@@ -4104,21 +4612,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 2.95,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.45,
             },
             {
               active: true,
               name: "2",
+
               odds: 4.05,
             },
             {
               active: true,
               name: "3+",
+
               odds: 8,
             },
           ],
@@ -4129,21 +4641,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.5,
             },
             {
               active: true,
               name: "2",
+
               odds: 6.75,
             },
             {
               active: true,
               name: "3+",
+
               odds: 25,
             },
           ],
@@ -4167,6 +4683,7 @@ const feed: Feed = {
             {
               active: true,
               name: "draw",
+              changedFromOdds: 5,
               odds: 4.95,
             },
             {
@@ -4182,16 +4699,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.2,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.14,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 2.2,
             },
           ],
@@ -4202,11 +4722,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.2,
             },
           ],
@@ -4217,11 +4739,13 @@ const feed: Feed = {
             {
               active: true,
               name: "draw",
+
               odds: 2.1,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 1.7,
             },
           ],
@@ -4232,11 +4756,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.75,
             },
           ],
@@ -4247,11 +4773,13 @@ const feed: Feed = {
             {
               active: true,
               name: "odd",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "even",
+
               odds: 1.9,
             },
           ],
@@ -4262,16 +4790,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 2.05,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4.05,
             },
           ],
@@ -4282,16 +4813,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 1.7,
             },
           ],
@@ -4302,11 +4836,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.45,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.75,
             },
           ],
@@ -4317,11 +4853,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 3.85,
             },
             {
               active: true,
               name: "no",
+
               odds: 1.25,
             },
           ],
@@ -4332,11 +4870,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "no",
+
               odds: 2.25,
             },
           ],
@@ -4347,11 +4887,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.18,
             },
             {
               active: true,
               name: "no",
+
               odds: 4.65,
             },
           ],
@@ -4362,16 +4904,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.6,
             },
             {
               active: true,
               name: "draw",
+
               odds: 4.95,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4,
             },
           ],
@@ -4382,16 +4927,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.55,
             },
             {
               active: true,
               name: "none",
+
               odds: 60,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.45,
             },
           ],
@@ -4402,16 +4950,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (1:0)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw (1:0)",
+
               odds: 6.75,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (1:0)",
+
               odds: 8.25,
             },
           ],
@@ -4422,16 +4973,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:2)",
+
               odds: 4.25,
             },
             {
               active: true,
               name: "draw (0:2)",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:2)",
+
               odds: 1.55,
             },
           ],
@@ -4442,16 +4996,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 2.45,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 4.5,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 2.3,
             },
           ],
@@ -4462,11 +5019,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 4",
+
               odds: 1.8,
             },
             {
               active: true,
               name: "over 4",
+
               odds: 1.95,
             },
           ],
@@ -4485,11 +5044,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 3.75",
+
               odds: 2.05,
             },
             {
               active: true,
               name: "over 3.75",
+
               odds: 1.75,
             },
           ],
@@ -4512,11 +5073,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.75,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 2.05,
             },
           ],
@@ -4527,11 +5090,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 3.5",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "over 3.5",
+
               odds: 3.7,
             },
           ],
@@ -4542,11 +5107,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 3.25,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.35,
             },
           ],
@@ -4557,11 +5124,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 4.2,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.22,
             },
           ],
@@ -4572,11 +5141,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.2,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 4.3,
             },
           ],
@@ -4587,11 +5158,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.75,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 2.05,
             },
           ],
@@ -4602,21 +5175,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 11.25,
             },
             {
               active: true,
               name: "1",
+
               odds: 4.35,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.4,
             },
             {
               active: true,
               name: "3+",
+
               odds: 2,
             },
           ],
@@ -4627,21 +5204,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 4.25,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.7,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.45,
             },
             {
               active: true,
               name: "3+",
+
               odds: 4.4,
             },
           ],
@@ -4652,16 +5233,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 2.05,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4.05,
             },
           ],
@@ -4672,16 +5256,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 4.6,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 3.45,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 1.75,
             },
           ],
@@ -4692,16 +5279,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (1:0)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw (1:0)",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (1:0)",
+
               odds: 13,
             },
           ],
@@ -4712,11 +5302,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (-0.5)",
+
               odds: 2.05,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (+0.5)",
+
               odds: 1.75,
             },
           ],
@@ -4727,11 +5319,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 2.1,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.7,
             },
           ],
@@ -4742,11 +5336,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 3.25,
             },
           ],
@@ -4761,11 +5357,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 2.9,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.4,
             },
           ],
@@ -4776,11 +5374,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.85,
             },
           ],
@@ -4791,21 +5391,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 2.85,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.45,
             },
             {
               active: true,
               name: "2",
+
               odds: 4.15,
             },
             {
               active: true,
               name: "3+",
+
               odds: 8.5,
             },
           ],
@@ -4816,21 +5420,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 1.85,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.5,
             },
             {
               active: true,
               name: "2",
+
               odds: 7,
             },
             {
               active: true,
               name: "3+",
+
               odds: 27,
             },
           ],
@@ -4849,16 +5457,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+              changedFromOdds: 1.6,
               odds: 1.65,
             },
             {
               active: true,
               name: "draw",
+              changedFromOdds: 4.95,
               odds: 4.9,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+              changedFromOdds: 4,
               odds: 3.95,
             },
           ],
@@ -4869,16 +5480,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.22,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.16,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 2.2,
             },
           ],
@@ -4889,11 +5503,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.2,
             },
           ],
@@ -4904,11 +5520,13 @@ const feed: Feed = {
             {
               active: true,
               name: "draw",
+
               odds: 2.1,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 1.7,
             },
           ],
@@ -4919,11 +5537,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw",
+
               odds: 3.7,
             },
           ],
@@ -4934,11 +5554,13 @@ const feed: Feed = {
             {
               active: true,
               name: "odd",
+
               odds: 1.9,
             },
             {
               active: true,
               name: "even",
+
               odds: 1.9,
             },
           ],
@@ -4949,16 +5571,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 2.05,
             },
             {
               active: true,
               name: "draw",
+
               odds: 2.95,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4.05,
             },
           ],
@@ -4969,16 +5594,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) or draw",
+
               odds: 1.2,
             },
             {
               active: true,
               name: "Denmark (Teok) or Ivory Coast (Vasm)",
+
               odds: 1.35,
             },
             {
               active: true,
               name: "draw or Ivory Coast (Vasm)",
+
               odds: 1.7,
             },
           ],
@@ -4989,11 +5617,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.45,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.75,
             },
           ],
@@ -5004,11 +5634,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 3.85,
             },
             {
               active: true,
               name: "no",
+
               odds: 1.25,
             },
           ],
@@ -5019,11 +5651,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.65,
             },
             {
               active: true,
               name: "no",
+
               odds: 2.25,
             },
           ],
@@ -5034,11 +5668,13 @@ const feed: Feed = {
             {
               active: true,
               name: "yes",
+
               odds: 1.18,
             },
             {
               active: true,
               name: "no",
+
               odds: 4.6,
             },
           ],
@@ -5049,16 +5685,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.65,
             },
             {
               active: true,
               name: "draw",
+
               odds: 4.9,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 3.95,
             },
           ],
@@ -5069,16 +5708,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 1.55,
             },
             {
               active: true,
               name: "none",
+
               odds: 58,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 2.45,
             },
           ],
@@ -5089,16 +5731,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (1:0)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw (1:0)",
+
               odds: 6.75,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (1:0)",
+
               odds: 8.25,
             },
           ],
@@ -5109,16 +5754,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:2)",
+
               odds: 4.35,
             },
             {
               active: true,
               name: "draw (0:2)",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:2)",
+
               odds: 1.55,
             },
           ],
@@ -5129,16 +5777,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 2.45,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 4.5,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 2.25,
             },
           ],
@@ -5149,11 +5800,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 4",
+
               odds: 1.75,
             },
             {
               active: true,
               name: "over 4",
+
               odds: 2.05,
             },
           ],
@@ -5168,11 +5821,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 3.75",
+
               odds: 2,
             },
             {
               active: true,
               name: "over 3.75",
+
               odds: 1.8,
             },
           ],
@@ -5195,11 +5850,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.75,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 2.1,
             },
           ],
@@ -5210,11 +5867,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 3.5",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "over 3.5",
+
               odds: 3.8,
             },
           ],
@@ -5225,11 +5884,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 3.15,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.35,
             },
           ],
@@ -5240,11 +5901,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 4.1,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.22,
             },
           ],
@@ -5255,11 +5918,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.2,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 4.45,
             },
           ],
@@ -5270,11 +5935,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 1.75,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 2.05,
             },
           ],
@@ -5285,21 +5952,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 10.75,
             },
             {
               active: true,
               name: "1",
+
               odds: 4.25,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.35,
             },
             {
               active: true,
               name: "3+",
+
               odds: 2.05,
             },
           ],
@@ -5310,21 +5981,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 4.15,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.7,
             },
             {
               active: true,
               name: "2",
+
               odds: 3.45,
             },
             {
               active: true,
               name: "3+",
+
               odds: 4.55,
             },
           ],
@@ -5335,16 +6010,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok)",
+
               odds: 2.05,
             },
             {
               active: true,
               name: "draw",
+
               odds: 2.95,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm)",
+
               odds: 4.05,
             },
           ],
@@ -5355,16 +6033,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (0:1)",
+
               odds: 4.75,
             },
             {
               active: true,
               name: "draw (0:1)",
+
               odds: 3.45,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (0:1)",
+
               odds: 1.75,
             },
           ],
@@ -5375,16 +6056,19 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (1:0)",
+
               odds: 1.25,
             },
             {
               active: true,
               name: "draw (1:0)",
+
               odds: 5.25,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (1:0)",
+
               odds: 13.25,
             },
           ],
@@ -5395,11 +6079,13 @@ const feed: Feed = {
             {
               active: true,
               name: "Denmark (Teok) (-0.5)",
+
               odds: 2.05,
             },
             {
               active: true,
               name: "Ivory Coast (Vasm) (+0.5)",
+
               odds: 1.75,
             },
           ],
@@ -5410,11 +6096,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 1.5",
+
               odds: 2.05,
             },
             {
               active: true,
               name: "over 1.5",
+
               odds: 1.75,
             },
           ],
@@ -5425,11 +6113,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 2.5",
+
               odds: 1.3,
             },
             {
               active: true,
               name: "over 2.5",
+
               odds: 3.45,
             },
           ],
@@ -5440,11 +6130,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 2.8,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.4,
             },
           ],
@@ -5455,11 +6147,13 @@ const feed: Feed = {
             {
               active: true,
               name: "under 0.5",
+
               odds: 1.85,
             },
             {
               active: true,
               name: "over 0.5",
+
               odds: 1.9,
             },
           ],
@@ -5470,21 +6164,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 2.75,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.4,
             },
             {
               active: true,
               name: "2",
+
               odds: 4.25,
             },
             {
               active: true,
               name: "3+",
+
               odds: 9.25,
             },
           ],
@@ -5495,21 +6193,25 @@ const feed: Feed = {
             {
               active: true,
               name: "0",
+
               odds: 1.8,
             },
             {
               active: true,
               name: "1",
+
               odds: 2.55,
             },
             {
               active: true,
               name: "2",
+
               odds: 7.25,
             },
             {
               active: true,
               name: "3+",
+
               odds: 29,
             },
           ],
