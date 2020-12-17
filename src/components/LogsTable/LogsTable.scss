@@ -102,4 +102,12 @@
       overflow: hidden;
     }
   }
+
+  // hover effects
+
+  table {
+    tbody tr:hover {
+      background-color: #ffa;
+    }
+  }
 }
