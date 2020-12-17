@@ -57,7 +57,7 @@
       z-index: 2;
       border-bottom: 0;
 
-      div {
+      & > div {
         height: 1.75ch;
         padding: 0.25rem;
         border-bottom: 1px solid black;

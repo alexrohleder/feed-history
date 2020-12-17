@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import { toDateTime } from "../../lib/timestamp";
 import LogsTableOutcomes from "./LogsTableOutcomes";
+import LogsTableStatistics from "./LogsTableStatistics/LogsTableStatistics";
 import "./LogsTable.scss";
 
 function LogsTable() {
@@ -24,6 +25,7 @@ function LogsTable() {
               <div>Type</div>
               <div>Match status</div>
               <div>Score</div>
+              <div>Statistics</div>
             </th>
             {entries.map((entry) => (
               <th key={entry.timestamp}>
@@ -31,6 +33,11 @@ function LogsTable() {
                 <div>{entry.type}</div>
                 <div>{entry.status}</div>
                 <div>{entry.score}</div>
+                <div>
+                  {entry.statistics && (
+                    <LogsTableStatistics statistics={entry.statistics} />
+                  )}
+                </div>
               </th>
             ))}
           </tr>
