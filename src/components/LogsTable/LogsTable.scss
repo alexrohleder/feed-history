@@ -1,3 +1,5 @@
+$border-color: #9ca3af;
+
 .container {
   height: calc(100vh - 40px);
   overflow: scroll;
@@ -20,7 +22,7 @@
 
     th {
       vertical-align: middle;
-      background-color: #dedede;
+      background-color: #e5e7eb;
     }
   }
 
@@ -30,20 +32,20 @@
     border-collapse: separate;
 
     thead th {
-      border-top: 1px solid;
-      border-bottom: 1px solid;
-      border-right: 1px solid;
+      border-top: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+      border-right: 1px solid $border-color;
     }
 
     tbody td,
     tbody th {
-      border-bottom: 1px solid;
-      border-right: 1px solid;
+      border-bottom: 1px solid $border-color;
+      border-right: 1px solid $border-color;
     }
 
     th:first-child,
     td:first-child {
-      border-left: 1px solid;
+      border-left: 1px solid $border-color;
     }
   }
 
@@ -60,7 +62,7 @@
       & > div {
         height: 1.75ch;
         padding: 0.25rem;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid $border-color;
       }
     }
 
@@ -107,7 +109,7 @@
 
   table {
     tbody tr:hover {
-      background-color: #ffa;
+      background-color: #ecfdf5;
     }
   }
 }
