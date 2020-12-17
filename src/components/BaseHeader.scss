@@ -1,5 +1,19 @@
 .base-header {
   height: 40px;
+  padding: 0 0.25rem;
   color: #fff;
-  background-color: #0072b1;
+  background-image: linear-gradient(261.55deg, #58bfa8 0%, #2e4162 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__meta {
+    display: flex;
+    gap: 1.5rem;
+
+    h1,
+    h2 {
+      font-weight: 600;
+    }
+  }
 }
