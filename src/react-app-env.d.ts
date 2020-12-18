@@ -29,6 +29,11 @@ type FeedEntry = {
 };
 
 type Market = {
+  outcomesPerLine: number;
+  specifiers: Record<string, MarketSpecifier>;
+};
+
+type MarketSpecifier = {
   status: MarketStatus;
   outcomes: MarketOutcome[];
 };

@@ -3,6 +3,7 @@ import { toDateTime } from "../../lib/timestamp";
 import LogsTableOutcomes from "./LogsTableOutcomes";
 import LogsTableStatistics from "./LogsTableStatistics/LogsTableStatistics";
 import "./LogsTable.scss";
+import LogsTableLines from "./LogsTableLines";
 
 function LogsTable() {
   const event = useSWR<SportEvent>("event");
@@ -49,13 +50,25 @@ function LogsTable() {
               {entries.map((entry) => {
                 if (entry.type === "Odds change") {
                   if (entry.markets?.[market.id]) {
+                    const { specifiers, outcomesPerLine } = entry.markets[
+                      market.id
+                    ];
+
+                    if (specifiers.default) {
+                      return (
+                        <LogsTableOutcomes
+                          key={entry.timestamp}
+                          status={specifiers.default.status}
+                          outcomes={specifiers.default.outcomes}
+                        />
+                      );
+                    }
+
                     return (
-                      <LogsTableOutcomes
+                      <LogsTableLines
                         key={entry.timestamp}
-                        marketId={market.id}
-                        timestamp={entry.timestamp}
-                        status={entry.markets[market.id].status}
-                        outcomes={entry.markets[market.id].outcomes}
+                        specifiers={specifiers}
+                        outcomesPerLine={outcomesPerLine}
                       />
                     );
                   }
