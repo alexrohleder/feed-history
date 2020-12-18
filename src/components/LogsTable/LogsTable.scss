@@ -18,11 +18,23 @@ $border-color: #9ca3af;
 
     td {
       padding: 0;
+
+      &.diagonal-bg {
+        background: repeating-linear-gradient(
+            45deg,
+            #e5e7eb 0,
+            #e5e7eb 1px,
+            transparent 0,
+            transparent 50%
+          )
+          fixed;
+        background-size: 10px 10px;
+      }
     }
 
     th {
       vertical-align: middle;
-      background-color: #e5e7eb;
+      background-color: #f3f4f6;
     }
   }
 
@@ -80,22 +92,18 @@ $border-color: #9ca3af;
     th,
     td {
       white-space: nowrap;
+    }
 
-      .resizeable {
-        text-overflow: ellipsis;
-        resize: horizontal;
-        overflow: hidden;
-        min-width: fit-content;
-      }
+    .resizeable {
+      text-overflow: ellipsis;
+      resize: horizontal;
+      overflow: hidden;
+      min-width: fit-content;
     }
 
     td .resizeable {
       margin: 0;
       padding: 0;
-    }
-
-    thead th:first-child .resizeable {
-      min-width: 195px;
     }
 
     tr th:first-child {

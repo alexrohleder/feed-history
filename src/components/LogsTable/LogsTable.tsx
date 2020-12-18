@@ -20,16 +20,16 @@ function LogsTable() {
       <table>
         <thead>
           <tr>
-            <th>
-              <div className="resizeable">Time</div>
+            <th className="resizeable">
+              <div>Time</div>
               <div>Type</div>
               <div>Match status</div>
               <div>Score</div>
               <div>Statistics</div>
             </th>
             {entries.map((entry) => (
-              <th key={entry.timestamp}>
-                <div className="resizeable">{toDateTime(entry.timestamp)}</div>
+              <th key={entry.timestamp} className="resizeable">
+                <div>{toDateTime(entry.timestamp)}</div>
                 <div>{entry.type}</div>
                 <div>{entry.status}</div>
                 <div>{entry.score}</div>
@@ -59,6 +59,10 @@ function LogsTable() {
                       />
                     );
                   }
+                }
+
+                if (entry.type === "Fixture change") {
+                  return <td key={entry.timestamp} className="diagonal-bg" />;
                 }
 
                 return <td key={entry.timestamp} />;
