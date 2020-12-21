@@ -3,6 +3,7 @@ import { toDateTime } from "../../lib/timestamp";
 import LogsTableOutcomes from "./LogsTableOutcomes";
 import LogsTableLines from "./LogsTableLines";
 import "./LogsTable.scss";
+import LogsTableRow from "./LogsTableRow";
 
 function LogsTable() {
   const event = useSWR<SportEvent>("event");
@@ -38,41 +39,7 @@ function LogsTable() {
         </thead>
         <tbody>
           {markets.map((market) => (
-            <tr key={market.id}>
-              <th title={market.name}>{market.name}</th>
-              {entries.map((entry) => {
-                if (entry.type === "Odds change") {
-                  if (entry.markets?.[market.id]) {
-                    const { specifiers } = entry.markets[market.id];
-
-                    if (specifiers.default) {
-                      return (
-                        <LogsTableOutcomes
-                          key={entry.timestamp}
-                          status={specifiers.default.status}
-                          outcomes={specifiers.default.outcomes}
-                        />
-                      );
-                    }
-
-                    return (
-                      <LogsTableLines
-                        key={entry.timestamp}
-                        specifiers={specifiers}
-                      />
-                    );
-                  }
-                }
-
-                return (
-                  <td
-                    key={entry.timestamp}
-                    className="diagonal-bg"
-                    data-type={entry.type}
-                  />
-                );
-              })}
-            </tr>
+            <LogsTableRow key={market.id} market={market} entries={entries} />
           ))}
         </tbody>
       </table>

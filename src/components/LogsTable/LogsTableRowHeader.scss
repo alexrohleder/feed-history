@@ -1,0 +1,34 @@
+.LogsTableRowHeader {
+  padding: 0 !important;
+
+  &-SpecifiersContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.25rem;
+    overflow-y: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &-Specifiers {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #9ca3af;
+
+    & > div {
+      border-bottom: 1px solid #9ca3af;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+.LogsTableRowHeaderExpander {
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e5e7eb;
+  }
+}
