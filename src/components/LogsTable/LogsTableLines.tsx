@@ -2,22 +2,15 @@ import LogsTableOutcomes from "./LogsTableOutcomes";
 import "./LogsTableLines.scss";
 
 type Props = {
-  specifiers: Record<string, MarketSpecifier>;
-  outcomesPerLine: number;
+  specifiers: Record<string, FeedMarketSpecifier>;
 };
-
-const OUTCOME_HEIGHT = 21;
 
 function LogsTableLines(props: Props) {
   return (
     <td>
       <div className="lines">
         {Object.keys(props.specifiers).map((specifier) => (
-          <div
-            key={specifier}
-            className="line"
-            style={{ height: OUTCOME_HEIGHT * props.outcomesPerLine }}
-          >
+          <div key={specifier} className="line">
             <LogsTableOutcomes
               as="div"
               outcomes={props.specifiers[specifier].outcomes}

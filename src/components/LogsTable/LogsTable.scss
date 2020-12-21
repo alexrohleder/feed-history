@@ -1,5 +1,9 @@
 $border-color: #9ca3af;
 
+:root {
+  --diagonal-bg-color: #e5e7eb;
+}
+
 .container {
   height: calc(100vh - 40px);
   overflow: scroll;
@@ -23,13 +27,17 @@ $border-color: #9ca3af;
       &.diagonal-bg {
         background: repeating-linear-gradient(
             45deg,
-            #e5e7eb 0,
-            #e5e7eb 1px,
+            var(--diagonal-bg-color) 0,
+            var(--diagonal-bg-color) 1px,
             transparent 0,
             transparent 50%
           )
           fixed;
         background-size: 10px 10px;
+
+        &[data-type="Bet start"] {
+          --diagonal-bg-color: #d1fae5;
+        }
       }
     }
 
@@ -76,6 +84,11 @@ $border-color: #9ca3af;
         height: 1.75ch;
         padding: 0.25rem;
         border-bottom: 1px solid $border-color;
+      }
+
+      &:first-child {
+        left: -1px;
+        z-index: 3;
       }
     }
 

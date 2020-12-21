@@ -4,13 +4,13 @@ type SportEvent = {
   urn: string;
   name: string;
   timestamp: number;
-  products: Entity[];
-  markets: Entity[];
+  markets: SportEventMarket[];
 };
 
-type Entity = {
+type SportEventMarket = {
   id: number;
   name: string;
+  specifiers: Record<string, number>; // specifiers (default if none) and the count of outcomes within
 };
 
 type Feed = {
@@ -19,32 +19,41 @@ type Feed = {
   entries: FeedEntry[];
 };
 
-type FeedEntry = {
-  type: "Odds change" | "Fixture change" | "Bet stop";
+type FeedEntry = GenericFeedEntry | OddsChangeFeedEntry;
+
+type GenericFeedEntry = {
+  type: "Fixture change" | "Bet stop" | "Bet start";
   timestamp: number;
   status?: string;
   score?: string;
   statistics?: Record<string, string>;
-  markets?: Record<string, Market>;
 };
 
-type Market = {
-  outcomesPerLine: number;
-  specifiers: Record<string, MarketSpecifier>;
+type OddsChangeFeedEntry = {
+  type: "Odds change";
+  timestamp: number;
+  status: string;
+  score: string;
+  statistics?: Record<string, string>;
+  markets: Record<string, FeedMarket>;
 };
 
-type MarketSpecifier = {
-  status: MarketStatus;
-  outcomes: MarketOutcome[];
+type FeedMarket = {
+  specifiers: Record<string, FeedMarketSpecifier>;
 };
 
-enum MarketStatus {
+type FeedMarketSpecifier = {
+  status: FeedMarketStatus;
+  outcomes: FeedMarketOutcome[];
+};
+
+enum FeedMarketStatus {
   ACTIVE,
   INACTIVE,
   SUSPENDED,
 }
 
-type MarketOutcome = {
+type FeedMarketOutcome = {
   name: string;
   odds: number;
   changedFromOdds?: number;

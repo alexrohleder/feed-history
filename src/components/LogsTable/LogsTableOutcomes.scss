@@ -2,7 +2,8 @@
   display: grid;
   align-items: center;
   height: 21px;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  color: #4b5563;
 
   &__name,
   &__odds {
@@ -11,13 +12,13 @@
 
   &__name {
     overflow: hidden;
-    background: #f3f4f6;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
 
   &.changed,
   &.changed &__name {
+    color: #111827;
     background-color: #fef3c7;
   }
 }

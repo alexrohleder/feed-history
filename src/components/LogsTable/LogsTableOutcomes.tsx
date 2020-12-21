@@ -2,8 +2,8 @@ import React from "react";
 import "./LogsTableOutcomes.scss";
 
 type Props = {
-  status: MarketStatus;
-  outcomes: MarketOutcome[];
+  status: FeedMarketStatus;
+  outcomes: FeedMarketOutcome[];
   as?: string;
 };
 
@@ -19,7 +19,7 @@ function LogsTableOutcomes({ as = "td", ...props }: Props) {
       let title;
       let className = "outcome";
 
-      if (outcome.changedFromOdds) {
+      if (typeof outcome.changedFromOdds === "number") {
         className += " changed";
         title = `This updated since the last message\nFrom ${outcome.changedFromOdds} to ${outcome.odds}`;
       }
@@ -27,7 +27,7 @@ function LogsTableOutcomes({ as = "td", ...props }: Props) {
       return (
         <div key={outcome.name} className={className} title={title}>
           <div className="outcome__name">{outcome.name}</div>
-          <div className="outcome__odds">{outcome.odds}</div>
+          <div className="outcome__odds">{outcome.odds.toFixed(2)}</div>
         </div>
       );
     })
