@@ -223,7 +223,7 @@ const feed: Feed = {
     },
     {
       type: "Odds change",
-      timestamp: 1609835718539,
+      timestamp: 1609835718541,
       status: "1st half",
       score: "home 0 — away 0",
       markets: {
@@ -570,9 +570,13 @@ const feed: Feed = {
 };
 
 const oddsChangeSample = feed.entries[2] as OddsChangeFeedEntry;
+const rand = () => Math.random() * (100000 - 10) + 10;
 
 for (let i = 0; i < 20; i++) {
-  feed.entries.push(oddsChangeSample);
+  feed.entries.push({
+    ...oddsChangeSample,
+    timestamp: oddsChangeSample.timestamp + rand(),
+  });
 }
 
 export default feed;

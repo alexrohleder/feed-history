@@ -44,6 +44,7 @@ function LogsTableRowHeader(props: Props) {
         <div className="LogsTableRowHeader-Specifiers">
           {Object.keys(props.specifiers).map((specifier) => (
             <LogsTableRowHeaderExpander
+              key={specifier}
               name={specifier}
               outcomesCount={props.specifiers[specifier]}
             />
