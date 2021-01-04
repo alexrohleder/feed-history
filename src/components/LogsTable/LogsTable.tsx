@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import { toDateTime } from "../../lib/timestamp";
-import LogsTableRow from "./LogsTableRow";
 import "./LogsTable.scss";
+import LogsTableRow from "./LogsTableRow";
 
 function LogsTable() {
   const event = useSWR<SportEvent>("event");

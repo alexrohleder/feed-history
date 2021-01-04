@@ -1,5 +1,5 @@
-import LogsTableOutcomes from "./LogsTableOutcomes";
 import "./LogsTableLines.scss";
+import LogsTableOutcomes from "./LogsTableOutcomes";
 
 type Props = {
   specifiers: Record<string, FeedMarketSpecifier>;
