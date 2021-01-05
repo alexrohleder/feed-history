@@ -1,3 +1,4 @@
+import { useReducer } from "react";
 import LogsTableLines from "./LogsTableLines";
 import LogsTableOutcomes from "./LogsTableOutcomes";
 import LogsTableRowHeader from "./LogsTableRowHeader";
@@ -11,11 +12,26 @@ export const OUTCOME_HEIGHT = 21;
 export const OUTCOME_BULK_SIZE = 3;
 
 function LogsTableRow(props: Props) {
+  const [specifierExpansionMap, setSpecifierExpansion] = useReducer(
+    (state: Record<string, number>, specifier: string) => {
+      return {
+        ...state,
+        [specifier]:
+          props.market.specifiers[specifier] > state[specifier]
+            ? state[specifier] + OUTCOME_BULK_SIZE
+            : OUTCOME_BULK_SIZE * 2,
+      };
+    },
+    {}
+  );
+
   return (
     <tr>
       <LogsTableRowHeader
         marketName={props.market.name}
         specifiers={props.market.specifiers}
+        specifierExpansionMap={specifierExpansionMap}
+        setSpecifierExpansion={setSpecifierExpansion}
       />
       {props.entries.map((entry) => {
         if (entry.type === "Odds change") {
@@ -33,7 +49,11 @@ function LogsTableRow(props: Props) {
             }
 
             return (
-              <LogsTableLines key={entry.timestamp} specifiers={specifiers} />
+              <LogsTableLines
+                key={entry.timestamp}
+                specifiers={specifiers}
+                specifierExpansionMap={specifierExpansionMap}
+              />
             );
           }
         }

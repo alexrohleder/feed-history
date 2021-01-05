@@ -19,12 +19,13 @@ function LogsTable() {
       <table>
         <thead>
           <tr>
-            <th className="resizeable">
+            <th className="">
               <div>Time</div>
               <div>Type</div>
               <div>Match status</div>
               <div>Score</div>
             </th>
+            <th className="resizeable" />
             {entries.map((entry) => (
               <th key={entry.timestamp} className="resizeable">
                 <div>{toDateTime(entry.timestamp)}</div>

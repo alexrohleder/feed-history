@@ -78,25 +78,40 @@ $border-color: #9ca3af;
       top: -1px;
       padding: 0;
       z-index: 2;
-      border-bottom: 0;
+      border-bottom: 1px solid $border-color;
 
       & > div {
         height: 1.75ch;
         padding: 0.25rem;
         border-bottom: 1px solid $border-color;
+
+        &:last-child {
+          border-bottom: 0;
+        }
       }
 
-      &:first-child {
+      &:nth-child(1),
+      &:nth-child(2) {
         left: -1px;
         z-index: 3;
       }
     }
 
-    tbody tr th {
+    tbody tr th:nth-child(1),
+    tbody tr th:nth-child(2) {
       left: -1px;
       z-index: 1;
       position: sticky;
       white-space: pre-wrap;
+    }
+
+    thead tr th:nth-child(1) div {
+      width: 100px;
+    }
+
+    thead tr th:nth-child(2),
+    tbody tr th:nth-child(2) {
+      left: 108px;
     }
   }
 
