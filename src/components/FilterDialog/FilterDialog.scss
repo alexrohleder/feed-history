@@ -1,0 +1,30 @@
+.FilterDialog {
+  width: 600px;
+  background-color: #fff;
+  border: 1px solid #9ca3af;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: fixed;
+  top: 10vh;
+  left: calc(50vw - 300px);
+  z-index: 100;
+}
+
+.FilterDialogTabs {
+  border-bottom: 1px solid #9ca3af;
+
+  .FilterDialogTabs_Tab {
+    cursor: pointer;
+    padding: 0.75rem;
+    display: inline-block;
+
+    &.active {
+      cursor: default;
+      background-color: #f3f4f6;
+    }
+  }
+}
+
+.FilterDialog_Body {
+  padding: 0.75rem;
+}

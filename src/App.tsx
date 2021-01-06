@@ -1,5 +1,6 @@
 import { SWRConfig } from "swr";
 import BaseHeader from "./components/BaseHeader";
+import FilterDialog from "./components/FilterDialog/FilterDialog";
 import LogsTable from "./components/LogsTable";
 
 const searchParams = new URLSearchParams(window.location.search);
@@ -29,6 +30,7 @@ function App() {
       <SWRConfig value={config}>
         <BaseHeader />
         <LogsTable />
+        <FilterDialog />
       </SWRConfig>
     </div>
   );
