@@ -2,6 +2,7 @@ import { SWRConfig } from "swr";
 import BaseHeader from "./components/BaseHeader";
 import FilterDialog from "./components/FilterDialog/FilterDialog";
 import LogsTable from "./components/LogsTable";
+import { MarketSelectionContextProvider } from "./context/MarketSelectionContext";
 
 const searchParams = new URLSearchParams(window.location.search);
 const event = searchParams.get("event");
@@ -28,9 +29,11 @@ function App() {
   return (
     <div className="App">
       <SWRConfig value={config}>
-        <BaseHeader />
-        <LogsTable />
-        <FilterDialog />
+        <MarketSelectionContextProvider>
+          <BaseHeader />
+          <LogsTable />
+          <FilterDialog />
+        </MarketSelectionContextProvider>
       </SWRConfig>
     </div>
   );

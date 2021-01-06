@@ -1,16 +1,24 @@
 /// <reference types="react-scripts" />
 
+declare module "group-by";
+
 type SportEvent = {
   urn: string;
   name: string;
   timestamp: number;
   markets: SportEventMarket[];
+  defaultMarketSelection: MarketSelection[];
 };
 
 type SportEventMarket = {
   id: number;
   name: string;
   specifiers: Record<string, number>; // specifiers (default if none) and the count of outcomes within
+};
+
+type MarketSelection = {
+  id: number;
+  specifier?: string;
 };
 
 type Feed = {

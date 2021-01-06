@@ -1,17 +1,27 @@
+import { useContext } from "react";
+import { MarketSelectionContext } from "../../context/MarketSelectionContext";
+import { getSortedSpecifiers } from "../../lib/getSortedSpecifiers";
 import "./LogsTableLines.scss";
 import LogsTableOutcomes from "./LogsTableOutcomes";
 import { OUTCOME_BULK_SIZE } from "./LogsTableRow";
 
 type Props = {
+  marketId: number;
   specifiers: Record<string, FeedMarketSpecifier>;
   specifierExpansionMap: Record<string, number>;
 };
 
 function LogsTableLines(props: Props) {
+  const { isMarketSelected } = useContext(MarketSelectionContext);
+
   return (
     <td>
       <div className="lines">
-        {Object.keys(props.specifiers).map((specifier) => {
+        {getSortedSpecifiers(Object.keys(props.specifiers)).map((specifier) => {
+          if (!isMarketSelected(props.marketId, specifier)) {
+            return null;
+          }
+
           const { outcomes, status } = props.specifiers[specifier];
 
           return (

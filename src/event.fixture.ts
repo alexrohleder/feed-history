@@ -35,6 +35,17 @@ const event: SportEvent = {
       },
     },
   ],
+  defaultMarketSelection: [
+    { id: 1, specifier: "default" },
+    { id: 18, specifier: "3.75" },
+    { id: 18, specifier: "4" },
+    { id: 18, specifier: "4.5" },
+    { id: 1000, specifier: "awiqkd49" },
+    { id: 1000, specifier: "e03keqp3" },
+    { id: 14, specifier: "0:1" },
+    { id: 14, specifier: "0:2" },
+    { id: 14, specifier: "1:0" },
+  ],
 };
 
 export default event;

@@ -17,6 +17,7 @@
     "@types/node": "^14.14.14",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "group-by": "^0.0.1",
     "husky": "^4.3.6",
     "lint-staged": "^10.5.3",
     "node-sass": "^4.14.1",

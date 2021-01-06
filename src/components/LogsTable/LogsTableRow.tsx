@@ -1,4 +1,5 @@
-import { useReducer } from "react";
+import { useContext, useReducer } from "react";
+import { MarketSelectionContext } from "../../context/MarketSelectionContext";
 import LogsTableLines from "./LogsTableLines";
 import LogsTableOutcomes from "./LogsTableOutcomes";
 import LogsTableRowHeader from "./LogsTableRowHeader";
@@ -25,9 +26,16 @@ function LogsTableRow(props: Props) {
     {}
   );
 
+  const { isMarketSelected } = useContext(MarketSelectionContext);
+
+  if (!isMarketSelected(props.market.id)) {
+    return null;
+  }
+
   return (
     <tr>
       <LogsTableRowHeader
+        marketId={props.market.id}
         marketName={props.market.name}
         specifiers={props.market.specifiers}
         specifierExpansionMap={specifierExpansionMap}
@@ -51,6 +59,7 @@ function LogsTableRow(props: Props) {
             return (
               <LogsTableLines
                 key={entry.timestamp}
+                marketId={props.market.id}
                 specifiers={specifiers}
                 specifierExpansionMap={specifierExpansionMap}
               />

@@ -45,6 +45,10 @@ $border-color: #9ca3af;
       vertical-align: middle;
       background-color: #f3f4f6;
     }
+
+    tbody th:nth-child(2) {
+      vertical-align: baseline;
+    }
   }
 
   // borders
@@ -73,6 +77,10 @@ $border-color: #9ca3af;
   // sticky th
 
   table {
+    th {
+      box-sizing: border-box;
+    }
+
     thead th {
       position: sticky;
       top: -1px;
@@ -90,28 +98,9 @@ $border-color: #9ca3af;
         }
       }
 
-      &:nth-child(1),
-      &:nth-child(2) {
-        left: -1px;
-        z-index: 3;
+      &:first-child {
+        min-width: 251px; // 250px + 1px border
       }
-    }
-
-    tbody tr th:nth-child(1),
-    tbody tr th:nth-child(2) {
-      left: -1px;
-      z-index: 1;
-      position: sticky;
-      white-space: pre-wrap;
-    }
-
-    thead tr th:nth-child(1) div {
-      width: 100px;
-    }
-
-    thead tr th:nth-child(2),
-    tbody tr th:nth-child(2) {
-      left: 108px;
     }
   }
 

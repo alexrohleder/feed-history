@@ -6,6 +6,7 @@ import MarketSelectionTab from "./MarketSelectionTab";
 enum TabEnum {
   MARKET_SELECTION,
   FILTERS,
+  SORT,
 }
 
 function FilterDialog() {
@@ -21,7 +22,7 @@ function FilterDialog() {
           }`}
           onClick={() => setActiveTab(TabEnum.MARKET_SELECTION)}
         >
-          Market Selection (Shift + M)
+          Market Selection (Alt + M)
         </div>
         <div
           className={`FilterDialogTabs_Tab ${
@@ -29,12 +30,20 @@ function FilterDialog() {
           }`}
           onClick={() => setActiveTab(TabEnum.FILTERS)}
         >
-          Filters (Shift + F)
+          Filters (Alt + F)
+        </div>
+        <div
+          className={`FilterDialogTabs_Tab ${
+            activeTab === TabEnum.SORT ? "active" : ""
+          }`}
+          onClick={() => setActiveTab(TabEnum.SORT)}
+        >
+          Sort (Alt + S)
         </div>
       </div>
-      <div className="FilterDialog_Body">
+      {activeTab === TabEnum.MARKET_SELECTION && (
         <MarketSelectionTab markets={event.data?.markets} />
-      </div>
+      )}
     </div>
   );
 }
