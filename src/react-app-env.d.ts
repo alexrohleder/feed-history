@@ -23,7 +23,7 @@ type MarketSelection = {
 
 type Feed = {
   currentPage: number;
-  totalPages: number;
+  pageCount: number;
   entries: FeedEntry[];
 };
 

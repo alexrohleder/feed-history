@@ -1,6 +1,6 @@
 const feed: Feed = {
   currentPage: 1,
-  totalPages: 9,
+  pageCount: 25,
   entries: [
     {
       type: "Fixture change",

@@ -8,10 +8,16 @@ const searchParams = new URLSearchParams(window.location.search);
 const event = searchParams.get("event");
 
 const config = {
-  fetcher: async (key: "event" | "feed") => {
+  fetcher: async (key: string) => {
     if (process.env.NODE_ENV === "development") {
       try {
-        const { default: fixture } = await import(`./${key}.fixture`);
+        const page = key.includes("?")
+          ? key.substring(0, key.indexOf("?"))
+          : key;
+
+        const { default: fixture } = await import(`./${page}.fixture`);
+
+        console.log(page);
 
         return fixture;
       } catch (error) {
@@ -32,7 +38,7 @@ function App() {
         <MarketSelectionContextProvider>
           <BaseHeader />
           <LogsTable />
-          <FilterDialog />
+          {false && <FilterDialog />}
         </MarketSelectionContextProvider>
       </SWRConfig>
     </div>
