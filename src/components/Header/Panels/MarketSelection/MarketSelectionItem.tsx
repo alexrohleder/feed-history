@@ -1,14 +1,12 @@
-import "./BaseHeaderActionsMarketSelectionItem.scss";
-
 type Props = {
   label: string;
   checked: boolean;
   onChange: () => void;
 };
 
-function BaseHeaderActionsMarketSelectionItem(props: Props) {
+function MarketSelectionItem(props: Props) {
   return (
-    <div className="BaseHeaderActionsMarketSelectionItem">
+    <div className="MarketSelectionItem">
       <label>
         <input
           type="checkbox"
@@ -21,4 +19,4 @@ function BaseHeaderActionsMarketSelectionItem(props: Props) {
   );
 }
 
-export default BaseHeaderActionsMarketSelectionItem;
+export default MarketSelectionItem;

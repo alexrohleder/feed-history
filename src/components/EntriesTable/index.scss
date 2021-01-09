@@ -1,0 +1,228 @@
+.EntriesTableContainer {
+  height: calc(100vh - 80px);
+  overflow: scroll;
+}
+
+.EntriesTable {
+  min-width: 100%;
+
+  &.suspended {
+    thead {
+      color: #9ca3af;
+    }
+
+    tbody {
+      text-align: center;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  th,
+  td {
+    height: 28px;
+    vertical-align: middle;
+    padding: 0.25rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-width: fit-content;
+  }
+
+  th {
+    vertical-align: top;
+    background-color: #f3f4f6;
+  }
+}
+
+// borders
+
+.EntriesTable {
+  border-collapse: separate;
+  border-bottom: 1px solid #9ca3af;
+
+  td,
+  th {
+    border-top: 1px solid #9ca3af;
+    border-right: 1px solid #9ca3af;
+  }
+
+  tbody {
+    border-top: 1px solid #9ca3af;
+    border-bottom: 1px solid #9ca3af;
+  }
+}
+
+// sticky th
+
+.EntriesTable {
+  th {
+    box-sizing: border-box;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    padding: 0;
+    z-index: 2;
+    border-bottom: 1px solid #9ca3af;
+
+    & > div {
+      height: 1.6rem;
+      padding: 0.25rem;
+      border-bottom: 1px solid #9ca3af;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    &:first-child {
+      text-align: left;
+      left: 0;
+      z-index: 3;
+
+      min-width: 260px;
+      max-width: 260px;
+    }
+  }
+
+  tbody th {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    top: 91px;
+
+    &.specifier {
+      left: 136px;
+    }
+
+    &.actions {
+      left: 229px;
+    }
+  }
+}
+
+// hover effects
+
+table {
+  tbody:hover {
+    background-color: #fffbeb;
+  }
+
+  tbody tr:hover {
+    background-color: #fef3c7;
+  }
+}
+
+// row header widths
+
+.EntriesTable .market {
+  min-width: 136px;
+  max-width: 136px;
+}
+
+.EntriesTable .specifier {
+  min-width: 93px;
+  max-width: 93px;
+}
+
+// actions
+
+.EntriesTable .actions {
+  min-width: 32px;
+  max-width: 32px;
+
+  button {
+    display: block;
+    width: 100%;
+    height: 21px;
+    padding: 0;
+
+    &:first-child {
+      margin-bottom: 0.25rem;
+    }
+  }
+}
+
+// resizable th
+
+.EntriesTable {
+  th,
+  td {
+    white-space: nowrap;
+  }
+
+  .resizeable {
+    text-overflow: ellipsis;
+    resize: horizontal;
+    overflow: hidden;
+    min-width: 142px;
+    max-width: 142px;
+  }
+
+  td .resizeable {
+    margin: 0;
+    padding: 0;
+  }
+
+  tr th:first-child {
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+// footer
+
+.EntriesTableFooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: 1px solid #9ca3af;
+
+  ul {
+    display: inline-block;
+
+    li {
+      display: inline-block;
+
+      &.disabled a,
+      &.disabled a:hover {
+        opacity: 0.5;
+        background-color: #9ca3af;
+      }
+
+      &.selected a,
+      &.selected a:hover {
+        color: #fff;
+        border-color: #0072b1;
+        background-color: #0072b1;
+      }
+
+      a {
+        display: inline-block;
+        min-width: 2ch;
+        text-align: center;
+        padding: 0.5rem 0.5rem;
+        margin: 0 0.25rem;
+        border-radius: 4px;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+          background-color: #f3f4f6;
+        }
+      }
+    }
+  }
+}

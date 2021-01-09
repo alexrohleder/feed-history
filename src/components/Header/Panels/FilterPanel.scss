@@ -1,0 +1,14 @@
+.FilterPanel {
+  padding: 0.25rem;
+  display: flex;
+  gap: 0.25rem;
+
+  input {
+    display: block;
+    padding: 0.25rem;
+    border-radius: 4px;
+    border: 1px solid #9ca3af;
+    margin-top: 0.25rem;
+    height: 20px;
+  }
+}

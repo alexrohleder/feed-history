@@ -1,17 +1,4 @@
-.BaseHeaderActionsMarketSelection {
-  position: absolute;
-  top: 40px;
-  right: 0;
-  z-index: 100;
-  min-width: 600px;
-  background-color: #fff;
-  border-bottom-left-radius: 4px;
-  border: 1px solid #9ca3af;
-  border-top: 0;
-  max-height: calc(100vh - 60px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-
+.MarketSelection {
   &_Grid {
     padding: 0.75rem;
     display: grid;
@@ -37,8 +24,10 @@
     margin-left: 3px;
     margin-bottom: 0.25rem;
   }
+}
 
-  &_Message {
-    padding: 0.75rem;
+.MarketSelectionItemGroup {
+  &_Body {
+    margin-left: 1rem;
   }
 }

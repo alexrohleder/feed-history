@@ -18,20 +18,20 @@ const event: SportEvent = {
       },
     },
     {
+      id: 1000,
+      name: "Winner",
+      specifiers: {
+        e03keqp3: 20,
+        awiqkd49: 20,
+      },
+    },
+    {
       id: 18,
       name: "Total",
       specifiers: {
         "4.5": 2,
         "4": 2,
         "3.75": 2,
-      },
-    },
-    {
-      id: 1000,
-      name: "Winner",
-      specifiers: {
-        e03keqp3: 20,
-        awiqkd49: 20,
       },
     },
   ],

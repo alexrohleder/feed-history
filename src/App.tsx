@@ -1,11 +1,9 @@
-import { Suspense } from "react";
 import { SWRConfig } from "swr";
 import AppErrorBoundary from "./AppErrorBoundary";
-import BaseHeader from "./components/BaseHeader";
-import BaseHeaderSuspended from "./components/BaseHeaderSuspended";
-import LogsTable from "./components/LogsTable";
-import LogsTableSuspended from "./components/LogsTable/LogsTableSuspended";
+import EntriesTableContainer from "./components/EntriesTable";
+import HeaderContainer from "./components/Header";
 import { MarketSelectionContextProvider } from "./context/MarketSelectionContext";
+import { SearchContextProvider } from "./context/SearchContext";
 
 const searchParams = new URLSearchParams(window.location.search);
 const event = searchParams.get("event");
@@ -23,9 +21,12 @@ const config = {
         console.log(`loaded ${page} from fixtures`);
 
         return new Promise((resolve) => {
-          setTimeout(() => {
-            resolve(fixture);
-          }, 250);
+          setTimeout(
+            () => {
+              resolve(fixture);
+            },
+            page === "event" ? 250 : 2500
+          );
         });
       } catch (error) {
         // if a typescript reference error happen inside the dynamic imported
@@ -38,6 +39,7 @@ const config = {
   },
 
   suspense: true,
+  revalidateOnFocus: false,
 };
 
 function App() {
@@ -45,14 +47,12 @@ function App() {
     <div className="App">
       <SWRConfig value={config}>
         <AppErrorBoundary>
-          <MarketSelectionContextProvider>
-            <Suspense fallback={<BaseHeaderSuspended />}>
-              <BaseHeader />
-            </Suspense>
-            <Suspense fallback={<LogsTableSuspended />}>
-              <LogsTable />
-            </Suspense>
-          </MarketSelectionContextProvider>
+          <SearchContextProvider>
+            <MarketSelectionContextProvider>
+              <HeaderContainer />
+              <EntriesTableContainer />
+            </MarketSelectionContextProvider>
+          </SearchContextProvider>
         </AppErrorBoundary>
       </SWRConfig>
     </div>

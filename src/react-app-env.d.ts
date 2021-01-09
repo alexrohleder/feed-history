@@ -1,6 +1,7 @@
 /// <reference types="react-scripts" />
 
 declare module "group-by";
+declare module "new-array";
 
 type SportEvent = {
   urn: string;
