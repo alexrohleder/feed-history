@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useSWR from "swr";
 import { toDateTime } from "../lib/timestamp";
 import "./BaseHeader.scss";

@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { SWRConfig } from "swr";
+import AppErrorBoundary from "./AppErrorBoundary";
 import BaseHeader from "./components/BaseHeader";
 import BaseHeaderSuspended from "./components/BaseHeaderSuspended";
 import LogsTable from "./components/LogsTable";
@@ -24,7 +25,7 @@ const config = {
         return new Promise((resolve) => {
           setTimeout(() => {
             resolve(fixture);
-          }, 1000);
+          }, 250);
         });
       } catch (error) {
         // if a typescript reference error happen inside the dynamic imported
@@ -43,14 +44,16 @@ function App() {
   return (
     <div className="App">
       <SWRConfig value={config}>
-        <MarketSelectionContextProvider>
-          <Suspense fallback={<BaseHeaderSuspended />}>
-            <BaseHeader />
-          </Suspense>
-          <Suspense fallback={<LogsTableSuspended />}>
-            <LogsTable />
-          </Suspense>
-        </MarketSelectionContextProvider>
+        <AppErrorBoundary>
+          <MarketSelectionContextProvider>
+            <Suspense fallback={<BaseHeaderSuspended />}>
+              <BaseHeader />
+            </Suspense>
+            <Suspense fallback={<LogsTableSuspended />}>
+              <LogsTable />
+            </Suspense>
+          </MarketSelectionContextProvider>
+        </AppErrorBoundary>
       </SWRConfig>
     </div>
   );
