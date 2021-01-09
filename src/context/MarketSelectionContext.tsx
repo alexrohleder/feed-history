@@ -11,16 +11,15 @@ export const MarketSelectionContext = react.createContext<Context>({
   toggleMarketSelection: () => undefined,
 });
 
-const EMPTY: any[] = [];
-
 export function MarketSelectionContextProvider(props: { children: ReactNode }) {
-  const event = useSWR<SportEvent>("event");
-  const defaultMarketSelection = event.data?.defaultMarketSelection ?? EMPTY;
-  const [selection, setSelection] = useState(defaultMarketSelection);
+  const event = useSWR<SportEvent>("event", { suspense: false });
+  const [selection, setSelection] = useState<MarketSelection[]>([]);
 
   useEffect(() => {
-    setSelection(defaultMarketSelection);
-  }, [defaultMarketSelection]);
+    if (event.data?.defaultMarketSelection) {
+      setSelection(event.data?.defaultMarketSelection);
+    }
+  }, [event.data?.defaultMarketSelection]);
 
   function isMarketSelected(id: number, specifier?: string) {
     if (typeof specifier === "undefined") {

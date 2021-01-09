@@ -1,7 +1,9 @@
+import { Suspense } from "react";
 import { SWRConfig } from "swr";
 import BaseHeader from "./components/BaseHeader";
-import FilterDialog from "./components/FilterDialog/FilterDialog";
+import BaseHeaderSuspended from "./components/BaseHeaderSuspended";
 import LogsTable from "./components/LogsTable";
+import LogsTableSuspended from "./components/LogsTable/LogsTableSuspended";
 import { MarketSelectionContextProvider } from "./context/MarketSelectionContext";
 
 const searchParams = new URLSearchParams(window.location.search);
@@ -19,7 +21,11 @@ const config = {
 
         console.log(`loaded ${page} from fixtures`);
 
-        return fixture;
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(fixture);
+          }, 1000);
+        });
       } catch (error) {
         // if a typescript reference error happen inside the dynamic imported
         // file it would be swallowed instead of fowarded, it happens only on dev.
@@ -29,6 +35,8 @@ const config = {
 
     return fetch(`/api/${event}/${key}`).then((res) => res.json());
   },
+
+  suspense: true,
 };
 
 function App() {
@@ -36,8 +44,12 @@ function App() {
     <div className="App">
       <SWRConfig value={config}>
         <MarketSelectionContextProvider>
-          <BaseHeader />
-          <LogsTable />
+          <Suspense fallback={<BaseHeaderSuspended />}>
+            <BaseHeader />
+          </Suspense>
+          <Suspense fallback={<LogsTableSuspended />}>
+            <LogsTable />
+          </Suspense>
         </MarketSelectionContextProvider>
       </SWRConfig>
     </div>
