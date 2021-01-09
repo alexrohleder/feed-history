@@ -17,7 +17,7 @@ const config = {
 
         const { default: fixture } = await import(`./${page}.fixture`);
 
-        console.log(page);
+        console.log(`loaded ${page} from fixtures`);
 
         return fixture;
       } catch (error) {
@@ -38,7 +38,6 @@ function App() {
         <MarketSelectionContextProvider>
           <BaseHeader />
           <LogsTable />
-          {false && <FilterDialog />}
         </MarketSelectionContextProvider>
       </SWRConfig>
     </div>

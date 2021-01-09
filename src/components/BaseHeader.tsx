@@ -1,6 +1,8 @@
+import { useState } from "react";
 import useSWR from "swr";
 import { toDateTime } from "../lib/timestamp";
 import "./BaseHeader.scss";
+import BaseHeaderActions from "./BaseHeaderActions";
 
 function BaseHeader() {
   const { data, error } = useSWR<SportEvent>("event");
@@ -10,8 +12,8 @@ function BaseHeader() {
   }
 
   return (
-    <header className="base-header">
-      <div className="base-header__meta">
+    <header className="BaseHeader">
+      <div className="BaseHeader_Meta">
         <h1>Feed History</h1>
         {data && (
           <>
@@ -21,6 +23,7 @@ function BaseHeader() {
           </>
         )}
       </div>
+      {data && <BaseHeaderActions markets={data.markets} />}
     </header>
   );
 }

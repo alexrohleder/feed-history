@@ -1,13 +1,13 @@
-.base-header {
+.BaseHeader {
   height: 40px;
   padding: 0 0.25rem;
-  color: #fff;
   background: #0072b1;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  &__meta {
+  &_Meta {
+    color: #fff;
     display: flex;
     gap: 1.5rem;
 

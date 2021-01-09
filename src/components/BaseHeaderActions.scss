@@ -1,0 +1,20 @@
+.BaseHeaderActions {
+  .BaseHeaderActions_Button {
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    background-color: transparent;
+    height: 40px;
+    padding: 0 1rem;
+    border-radius: 0;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    &.active {
+      color: inherit;
+      background-color: #fff;
+    }
+  }
+}

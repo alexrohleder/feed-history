@@ -1,4 +1,4 @@
-import "./MarketSelectionTabItem.scss";
+import "./BaseHeaderActionsMarketSelectionItem.scss";
 
 type Props = {
   label: string;
@@ -6,9 +6,9 @@ type Props = {
   onChange: () => void;
 };
 
-function MarketSelectionTabItem(props: Props) {
+function BaseHeaderActionsMarketSelectionItem(props: Props) {
   return (
-    <div className="MarketSelectionTabItem">
+    <div className="BaseHeaderActionsMarketSelectionItem">
       <label>
         <input
           type="checkbox"
@@ -21,4 +21,4 @@ function MarketSelectionTabItem(props: Props) {
   );
 }
 
-export default MarketSelectionTabItem;
+export default BaseHeaderActionsMarketSelectionItem;

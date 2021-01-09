@@ -1,27 +1,39 @@
 import groupBy from "group-by";
 import { ReactNode, useContext, useState } from "react";
-import { MarketSelectionContext } from "../../context/MarketSelectionContext";
-import { getSortedSpecifiers } from "../../lib/getSortedSpecifiers";
-import "./MarketSelectionTab.scss";
-import MarketSelectionTabItem from "./MarketSelectionTabItem";
-import MarketSelectionTabItemList from "./MarketSelectionTabItemList";
+import { MarketSelectionContext } from "../context/MarketSelectionContext";
+import { getSortedSpecifiers } from "../lib/getSortedSpecifiers";
+import "./BaseHeaderActionsMarketSelection.scss";
+import BaseHeaderActionsMarketSelectionItem from "./BaseHeaderActionsMarketSelectionItem";
+import BaseHeaderActionsMarketSelectionItemGroup from "./BaseHeaderActionsMarketSelectionItemGroup";
 
 type Props = {
   markets?: SportEventMarket[];
 };
 
-function MarketSelectionTab(props: Props) {
+function BaseHeaderActionsMarketSelection(props: Props) {
   const context = useContext(MarketSelectionContext);
   const isSelected = context.isMarketSelected;
   const toggleSelection = context.toggleMarketSelection;
   const [search, setSearch] = useState("");
 
   if (typeof props.markets === "undefined") {
-    return <div className="MarketSelectionTab_Message">Loading...</div>;
+    return (
+      <div className="BaseHeaderActionsMarketSelection">
+        <div className="BaseHeaderActionsMarketSelection_Message">
+          Loading...
+        </div>
+      </div>
+    );
   }
 
   if (props.markets.length === 0) {
-    return <div className="MarketSelectionTab_Message">No markets found</div>;
+    return (
+      <div className="BaseHeaderActionsMarketSelection">
+        <div className="BaseHeaderActionsMarketSelection_Message">
+          No markets found
+        </div>
+      </div>
+    );
   }
 
   const marketsByLetter: Record<
@@ -41,7 +53,7 @@ function MarketSelectionTab(props: Props) {
       if (market.specifiers.default) {
         if (market.name.toLowerCase().includes(searchTerm)) {
           markets.push(
-            <MarketSelectionTabItem
+            <BaseHeaderActionsMarketSelectionItem
               key={market.id}
               label={market.name}
               checked={isSelected(market.id, "default")}
@@ -61,16 +73,19 @@ function MarketSelectionTab(props: Props) {
 
       if (specifiers.length) {
         markets.push(
-          <MarketSelectionTabItemList key={market.id} title={market.name}>
+          <BaseHeaderActionsMarketSelectionItemGroup
+            key={market.id}
+            title={market.name}
+          >
             {specifiers.map((specifier) => (
-              <MarketSelectionTabItem
+              <BaseHeaderActionsMarketSelectionItem
                 key={specifier}
                 label={specifier}
                 checked={isSelected(market.id, specifier)}
                 onChange={toggleSelection.bind(null, market.id, specifier)}
               />
             ))}
-          </MarketSelectionTabItemList>
+          </BaseHeaderActionsMarketSelectionItemGroup>
         );
       }
     }
@@ -80,29 +95,31 @@ function MarketSelectionTab(props: Props) {
     }
 
     content.push(
-      <div key={letter} className="MarketSelectionTab_Column">
-        <div className="MarketSelectionTab_ColumnTitle">{letter}</div>
+      <div key={letter} className="BaseHeaderActionsMarketSelection_Column">
+        <div className="BaseHeaderActionsMarketSelection_ColumnTitle">
+          {letter}
+        </div>
         {markets}
       </div>
     );
   }
 
   return (
-    <div className="MarketSelectionTab">
+    <div className="BaseHeaderActionsMarketSelection">
       <input
         type="search"
         value={search}
         onChange={(event) => setSearch(event.target.value)}
         name="market-selection"
-        className="MarketSelectionTab_Search"
+        className="BaseHeaderActionsMarketSelection_Search"
         autoFocus
       />
       {content.length ? (
-        <div className="MarketSelectionTab_Body">
-          <div className="MarketSelectionTab_Grid">{content}</div>
+        <div className="BaseHeaderActionsMarketSelection_Body">
+          <div className="BaseHeaderActionsMarketSelection_Grid">{content}</div>
         </div>
       ) : (
-        <div className="MarketSelectionTab_Message">
+        <div className="BaseHeaderActionsMarketSelection_Message">
           No market or specifier found with your search term
         </div>
       )}
@@ -110,4 +127,4 @@ function MarketSelectionTab(props: Props) {
   );
 }
 
-export default MarketSelectionTab;
+export default BaseHeaderActionsMarketSelection;
