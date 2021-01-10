@@ -10,7 +10,7 @@ const event = searchParams.get("event");
 
 const config = {
   fetcher: async (key: string) => {
-    if (process.env.NODE_ENV === "development") {
+    if (process.env.NODE_ENV !== "test") {
       try {
         const page = key.includes("?")
           ? key.substring(0, key.indexOf("?"))
