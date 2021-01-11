@@ -1,20 +1,6 @@
 .EntriesTableContainer {
   height: calc(100vh - 80px);
   overflow: scroll;
-}
-
-.EntriesTable {
-  min-width: 100%;
-
-  &.suspended {
-    thead {
-      color: #9ca3af;
-    }
-
-    tbody {
-      text-align: center;
-    }
-  }
 
   * {
     box-sizing: border-box;
@@ -24,16 +10,67 @@
   td {
     height: 28px;
     vertical-align: middle;
-    padding: 0.25rem;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    min-width: fit-content;
+    padding: 4px;
   }
 
   th {
     vertical-align: top;
     background-color: #f3f4f6;
+
+    &.labels {
+      text-align: left;
+    }
+  }
+
+  thead th {
+    padding: 0;
+
+    & > div {
+      height: 24px;
+      padding: 4px;
+      border-bottom: 1px solid #9ca3af;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+// widths
+
+.EntriesTable {
+  thead th.labels {
+    min-width: 260px;
+    max-width: 260px;
+  }
+
+  th.market {
+    min-width: 136px;
+    max-width: 136px;
+  }
+
+  th.specifier {
+    min-width: 92px;
+    max-width: 92px;
+  }
+
+  th.actions {
+    min-width: 32px;
+    max-width: 32px;
+  }
+
+  td.outcome-name {
+    min-width: 120px;
+    max-width: 120px;
+  }
+
+  td.outcome-odds {
+    min-width: 55px;
+    max-width: 55px;
   }
 }
 
@@ -48,66 +85,11 @@
     border-top: 1px solid #9ca3af;
     border-right: 1px solid #9ca3af;
   }
-
-  tbody {
-    border-top: 1px solid #9ca3af;
-    border-bottom: 1px solid #9ca3af;
-  }
-}
-
-// sticky th
-
-.EntriesTable {
-  th {
-    box-sizing: border-box;
-  }
-
-  thead th {
-    position: sticky;
-    top: 0;
-    padding: 0;
-    z-index: 2;
-    border-bottom: 1px solid #9ca3af;
-
-    & > div {
-      height: 1.6rem;
-      padding: 0.25rem;
-      border-bottom: 1px solid #9ca3af;
-
-      &:last-child {
-        border-bottom: 0;
-      }
-    }
-
-    &:first-child {
-      text-align: left;
-      left: 0;
-      z-index: 3;
-
-      min-width: 260px;
-      max-width: 260px;
-    }
-  }
-
-  tbody th {
-    position: sticky;
-    left: 0;
-    z-index: 2;
-    top: 91px;
-
-    &.specifier {
-      left: 136px;
-    }
-
-    &.actions {
-      left: 229px;
-    }
-  }
 }
 
 // hover effects
 
-table {
+.EntriesTable {
   tbody:hover {
     background-color: #fffbeb;
   }
@@ -115,18 +97,6 @@ table {
   tbody tr:hover {
     background-color: #fef3c7;
   }
-}
-
-// row header widths
-
-.EntriesTable .market {
-  min-width: 136px;
-  max-width: 136px;
-}
-
-.EntriesTable .specifier {
-  min-width: 93px;
-  max-width: 93px;
 }
 
 // actions
@@ -138,50 +108,72 @@ table {
   button {
     display: block;
     width: 100%;
-    height: 21px;
+    height: 20px;
     padding: 0;
 
     &:first-child {
-      margin-bottom: 0.25rem;
+      margin-bottom: 8px;
     }
   }
 }
 
-// resizable th
+// sticky headers
 
 .EntriesTable {
-  th,
-  td {
-    white-space: nowrap;
+  th {
+    box-sizing: border-box;
   }
 
-  .resizeable {
-    text-overflow: ellipsis;
-    resize: horizontal;
-    overflow: hidden;
-    min-width: 142px;
-    max-width: 142px;
+  thead th {
+    top: 0;
+    z-index: 2;
+    position: sticky;
+    border-bottom: 1px solid #9ca3af;
+
+    &.labels {
+      left: 0;
+      z-index: 3;
+    }
   }
 
-  td .resizeable {
-    margin: 0;
-    padding: 0;
+  tbody th {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    top: 97px;
+
+    &.specifier {
+      left: 136px;
+    }
+
+    &.actions {
+      left: 228px;
+    }
+  }
+}
+
+// suspended state
+
+.EntriesTable.suspended {
+  min-width: 100%;
+
+  thead {
+    color: #9ca3af;
   }
 
-  tr th:first-child {
-    text-align: left;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  tbody {
+    text-align: center;
+  }
+
+  tbody:hover,
+  tbody tr:hover {
+    background-color: #fff;
   }
 }
 
 // footer
 
 .EntriesTableFooter {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background-color: #fff;
   height: 40px;
   display: flex;
@@ -213,8 +205,8 @@ table {
         display: inline-block;
         min-width: 2ch;
         text-align: center;
-        padding: 0.5rem 0.5rem;
-        margin: 0 0.25rem;
+        padding: 8px;
+        margin: 0 4px;
         border-radius: 4px;
         cursor: pointer;
         user-select: none;

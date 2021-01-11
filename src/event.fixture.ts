@@ -12,14 +12,14 @@ const event: SportEvent = {
       id: 14,
       name: "Handicap {hcp}",
       specifiers: {
-        "0:1": 3,
+        "Some super long specifier name": 3,
         "0:2": 3,
         "1:0": 3,
       },
     },
     {
       id: 1000,
-      name: "Winner",
+      name: "Winner With Super long name",
       specifiers: {
         e03keqp3: 20,
         awiqkd49: 20,
@@ -42,7 +42,7 @@ const event: SportEvent = {
     { id: 18, specifier: "4.5" },
     { id: 1000, specifier: "awiqkd49" },
     { id: 1000, specifier: "e03keqp3" },
-    { id: 14, specifier: "0:1" },
+    { id: 14, specifier: "Some super long specifier name" },
     { id: 14, specifier: "0:2" },
     { id: 14, specifier: "1:0" },
   ],

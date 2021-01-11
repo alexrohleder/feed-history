@@ -9,11 +9,13 @@ function EntriesTableContainer() {
   const event = useSWR<SportEvent>("event");
 
   return (
-    <div className="EntriesTableContainer">
-      <EntriesTable
-        entries={feed.data!.entries}
-        markets={event.data!.markets}
-      />
+    <>
+      <div className="EntriesTableContainer">
+        <EntriesTable
+          entries={feed.data!.entries}
+          markets={event.data!.markets}
+        />
+      </div>
       <div className="EntriesTableFooter">
         <ReactPaginate
           forcePage={page}
@@ -23,7 +25,7 @@ function EntriesTableContainer() {
           onPageChange={({ selected }) => setPage(selected)}
         />
       </div>
-    </div>
+    </>
   );
 }
 

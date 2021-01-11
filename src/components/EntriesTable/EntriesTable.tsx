@@ -75,11 +75,20 @@ function EntriesTable(props: Props) {
 
             if (isMatchingSearch(outcomes[row].name, outcomeSearchTerm)) {
               name = outcomes[row].name;
-              odds = outcomes[row].odds;
+              odds = outcomes[row].odds.toFixed(2);
             }
 
-            rowsWithCols[row].push(<td key={`${col}:n`}>{name}</td>);
-            rowsWithCols[row].push(<td key={`${col}:o`}>{odds}</td>);
+            rowsWithCols[row].push(
+              <td key={`${col}:n`} className="outcome-name" title={name}>
+                {name}
+              </td>
+            );
+
+            rowsWithCols[row].push(
+              <td key={`${col}:o`} className="outcome-odds" title={odds}>
+                {odds}
+              </td>
+            );
           }
         }
       }
@@ -95,14 +104,22 @@ function EntriesTable(props: Props) {
             <tr key={`${group.name}:${rowIndex}`}>
               {/** if first row of first specifier then we place market name with rowSpan */}
               {rowIndex === 0 && specifierIndex === 0 && (
-                <th rowSpan={marketRowSpan} className="market">
+                <th
+                  rowSpan={marketRowSpan}
+                  className="market"
+                  title={market.name}
+                >
                   {market.name}
                 </th>
               )}
               {/** if first row of an specifier we place specifier name and actions */}
               {rowIndex === 0 && (
                 <>
-                  <th rowSpan={group.rows.length} className="specifier">
+                  <th
+                    rowSpan={group.rows.length}
+                    className="specifier"
+                    title={group.name}
+                  >
                     {group.name}
                   </th>
                   <th className="actions" rowSpan={group.rows.length}>
@@ -135,7 +152,7 @@ function EntriesTable(props: Props) {
     <table className="EntriesTable">
       <thead>
         <tr>
-          <th colSpan={3}>
+          <th colSpan={3} className="labels">
             <div>Time</div>
             <div>Type</div>
             <div>Match status</div>
@@ -144,7 +161,6 @@ function EntriesTable(props: Props) {
           {props.entries.map((entry) => (
             <th
               key={entry.timestamp}
-              className="resizeable"
               colSpan={entry.type === "Odds change" ? 2 : 1}
             >
               <div>{format(entry.timestamp, "dd/MM/Y HH:mm:ss")}</div>

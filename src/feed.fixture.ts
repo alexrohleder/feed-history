@@ -42,7 +42,7 @@ const feed: Feed = {
         },
         "14": {
           specifiers: {
-            "0:1": {
+            "Some super long specifier name": {
               status: 1,
               outcomes: [
                 {
@@ -255,7 +255,7 @@ const feed: Feed = {
         },
         "14": {
           specifiers: {
-            "0:1": {
+            "Some super long specifier name": {
               status: 1,
               outcomes: [
                 {
