@@ -1,10 +1,10 @@
-import { useState } from "react";
 import ReactPaginate from "react-paginate";
 import useSWR from "swr";
 import EntriesTable from "./EntriesTable";
+import usePage from "./hooks/usePage";
 
 function EntriesTableContainer() {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = usePage();
   const feed = useSWR<Feed>(`feed?page=${page}`);
   const event = useSWR<SportEvent>("event");
 
