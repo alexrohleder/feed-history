@@ -15,6 +15,10 @@ const collator = new Intl.Collator(undefined, {
   sensitivity: "base",
 });
 
+// [FeedMarketStatus] => color, we use hard coded styles for export to xls
+const statusColors = ["", "#fecaca", "#fed7aa"];
+const inactiveOutcomeStatusColor = "#e4e4e7";
+
 const isMatchingSearch = (haystack: string, needle: string) =>
   haystack.toLowerCase().includes(needle.toLowerCase());
 
@@ -74,21 +78,25 @@ function EntriesTable(props: Props) {
 
           for (let row = 0; row < rowCount; row++) {
             const outcome = outcomes[row];
+            const style = { backgroundColor: statusColors[status] };
             let name, odds, changedFromOdds;
-            let flags = `status-${status}`;
 
             if (isMatchingSearch(outcome.name, outcomeSearchTerm)) {
               name = outcome.name;
               odds = outcome.odds.toFixed(2);
               changedFromOdds = outcome.changedFromOdds?.toFixed(2);
-              flags += outcome.active ? "" : " inactive";
+
+              if (!outcome.active) {
+                style.backgroundColor = inactiveOutcomeStatusColor;
+              }
             }
 
             rowsWithCols[row].push(
               <td
                 key={`${col}:n`}
-                className={`outcome-name ${flags}`}
+                className="outcome-name"
                 title={name}
+                style={style}
               >
                 {name}
               </td>
@@ -97,8 +105,9 @@ function EntriesTable(props: Props) {
             rowsWithCols[row].push(
               <td
                 key={`${col}:o`}
-                className={`outcome-odds ${flags}`}
+                className="outcome-odds"
                 title={odds}
+                style={style}
               >
                 {odds}
                 {changedFromOdds && (
@@ -169,7 +178,7 @@ function EntriesTable(props: Props) {
   }
 
   return (
-    <table className="EntriesTable">
+    <table className="EntriesTable" id="table-to-xls">
       <thead>
         <tr>
           <th colSpan={3} className="labels">

@@ -2,6 +2,7 @@
 
 declare module "group-by";
 declare module "new-array";
+declare module "react-html-table-to-excel";
 
 type SportEvent = {
   urn: string;

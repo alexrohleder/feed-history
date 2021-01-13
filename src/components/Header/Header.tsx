@@ -1,5 +1,6 @@
 import { format } from "date-fns";
 import { useState } from "react";
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import useSWR from "swr";
 import HeaderPanel from "./HeaderPanel";
 import FilterPanel from "./Panels/FilterPanel";
@@ -30,6 +31,13 @@ function Header() {
           <h4>({data!.urn})</h4>
         </div>
         <div className="Header_Actions">
+          <ReactHTMLTableToExcel
+            table="table-to-xls"
+            className="Header_ActionButton"
+            filename={`uof-history-${data!.urn}`}
+            sheet="uof history"
+            buttonText="Download as XLS"
+          />
           <button
             className={getClassName(Panel.MARKET_SELECTION)}
             onClick={() => togglePanelOpeness(Panel.MARKET_SELECTION)}
