@@ -7,6 +7,7 @@ import { SearchContextProvider } from "./context/SearchContext";
 
 const searchParams = new URLSearchParams(window.location.search);
 const event = searchParams.get("event");
+const noDelay = searchParams.get("noDelay");
 
 const config = {
   fetcher: async (key: string) => {
@@ -25,7 +26,7 @@ const config = {
             () => {
               resolve(fixture);
             },
-            page === "event" ? 250 : 2500
+            noDelay ? 0 : page === "event" ? 250 : 2500
           );
         });
       } catch (error) {

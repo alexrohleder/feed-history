@@ -15,30 +15,20 @@ const collator = new Intl.Collator(undefined, {
   sensitivity: "base",
 });
 
-// [FeedMarketStatus] => color, we use hard coded styles for export to xls
-const statusColors = ["", "#fecaca", "#fed7aa"];
-const inactiveOutcomeStatusColor = "#e4e4e7";
-
-const isMatchingSearch = (haystack: string, needle: string) =>
-  haystack.toLowerCase().includes(needle.toLowerCase());
+const STATUS_COLOR = ["", "#fecaca", "#fed7aa"];
+const INACTIVE_COLOR = "#e4e4e7";
 
 function EntriesTable(props: Props) {
-  const { isMarketSelected } = useContext(MarketSelectionContext);
+  const marketSelection = useContext(MarketSelectionContext);
   const [isStatisticsVisible, setStatisticsVisibility] = useState(false);
-  const { specifierSearchTerm, outcomeSearchTerm } = useContext(SearchContext);
-
-  const {
-    getVisibleOutcomeCount,
-    isOutcomeIncreseable,
-    isOutcomeDecreaseable,
-    increaseOutcomeCount,
-    decreaseOutcomeCount,
-  } = useSpecifierExpansion();
+  const search = useContext(SearchContext);
+  const expansion = useSpecifierExpansion();
 
   const rows = [];
 
   for (const market of props.markets) {
-    if (!isMarketSelected(market.id)) {
+    if (!marketSelection.isSelected(market.id)) {
+      console.log("hmm");
       continue;
     }
 
@@ -49,14 +39,15 @@ function EntriesTable(props: Props) {
 
     for (const specifier of specifiers) {
       if (
-        !isMarketSelected(market.id, specifier) ||
-        !isMatchingSearch(specifier, specifierSearchTerm)
+        !marketSelection.isSelected(market.id, specifier) ||
+        !search.isSpecifierVisible(specifier)
       ) {
+        console.log("oho", search.isSpecifierVisible(specifier));
         continue;
       }
 
       // defining the matrix of rows and columns, see as [[col, col, col], [col, col, col]].
-      const rowCount = getVisibleOutcomeCount(market, specifier);
+      const rowCount = expansion.count(market, specifier);
       const rowsWithCols: ReactNode[][] = newArray(rowCount).map(() => []);
 
       // looping columns, see entries as columns and outcomes as rows
@@ -70,6 +61,7 @@ function EntriesTable(props: Props) {
         } else {
           // should never happen, but for safety lets treat
           if (!entry.markets[market.id].specifiers[specifier]) {
+            console.log("ué");
             continue;
           }
 
@@ -78,16 +70,16 @@ function EntriesTable(props: Props) {
 
           for (let row = 0; row < rowCount; row++) {
             const outcome = outcomes[row];
-            const style = { backgroundColor: statusColors[status] };
+            const style = { backgroundColor: STATUS_COLOR[status] };
             let name, odds, changedFromOdds;
 
-            if (isMatchingSearch(outcome.name, outcomeSearchTerm)) {
+            if (search.isOutcomeVisible(outcome.name)) {
               name = outcome.name;
               odds = outcome.odds.toFixed(2);
               changedFromOdds = outcome.changedFromOdds?.toFixed(2);
 
               if (!outcome.active) {
-                style.backgroundColor = inactiveOutcomeStatusColor;
+                style.backgroundColor = INACTIVE_COLOR;
               }
             }
 
@@ -153,15 +145,15 @@ function EntriesTable(props: Props) {
                   </th>
                   <th className="actions" rowSpan={group.rows.length}>
                     <button
-                      disabled={!isOutcomeIncreseable(market, group.name)}
-                      onClick={() => increaseOutcomeCount(market, group.name)}
+                      disabled={!expansion.isIncreasable(market, group.name)}
+                      onClick={() => expansion.increase(market, group.name)}
                       title={`Expand outcomes of specifier ${group.name} on market ${market.name}`}
                     >
                       +
                     </button>
                     <button
-                      disabled={!isOutcomeDecreaseable(market, group.name)}
-                      onClick={() => decreaseOutcomeCount(market, group.name)}
+                      disabled={!expansion.isDecreasable(market, group.name)}
+                      onClick={() => expansion.decrease(market, group.name)}
                       title={`Collapse outcomes of specifier ${group.name} on market ${market.name}`}
                     >
                       -

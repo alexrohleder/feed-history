@@ -5,40 +5,23 @@ const OUTCOME_BULK_SIZE = 3;
 function useSpecifierExpansion() {
   const [state, setState] = useState<Record<string, number>>({});
 
-  const isOutcomeIncreseable = (
-    market: SportEventMarket,
-    specifier: string
-  ) => {
+  const compute = (market: SportEventMarket, specifier: string) => {
     const max = market.specifiers[specifier];
     const min = Math.min(max, OUTCOME_BULK_SIZE);
-    const current = state[`${market.id}:${specifier}`] ?? min;
+    const token = `${market.id}:${specifier}`;
+    const current = state[token] ?? min;
 
-    return max > current;
-  };
-
-  const isOutcomeDecreaseable = (
-    market: SportEventMarket,
-    specifier: string
-  ) => {
-    const max = market.specifiers[specifier];
-    const min = Math.min(max, OUTCOME_BULK_SIZE);
-    const current = state[`${market.id}:${specifier}`] ?? min;
-
-    return min < current;
+    return { max, min, current, token };
   };
 
   return {
-    getVisibleOutcomeCount(market: SportEventMarket, specifier: string) {
+    count(market: SportEventMarket, specifier: string) {
       return market.specifiers[specifier] < OUTCOME_BULK_SIZE
         ? market.specifiers[specifier]
         : state[`${market.id}:${specifier}`] ?? OUTCOME_BULK_SIZE;
     },
-    increaseOutcomeCount(market: SportEventMarket, specifier: string) {
-      const token = `${market.id}:${specifier}`;
-
-      const max = market.specifiers[specifier];
-      const min = Math.min(max, OUTCOME_BULK_SIZE);
-      const current = state[token] ?? min;
+    increase(market: SportEventMarket, specifier: string) {
+      const { max, current, token } = compute(market, specifier);
 
       setState({
         ...state,
@@ -46,12 +29,8 @@ function useSpecifierExpansion() {
           max > current ? Math.min(current + OUTCOME_BULK_SIZE, max) : max,
       });
     },
-    decreaseOutcomeCount(market: SportEventMarket, specifier: string) {
-      const token = `${market.id}:${specifier}`;
-
-      const max = market.specifiers[specifier];
-      const min = Math.min(max, OUTCOME_BULK_SIZE);
-      const current = state[token] ?? min;
+    decrease(market: SportEventMarket, specifier: string) {
+      const { min, current, token } = compute(market, specifier);
 
       setState({
         ...state,
@@ -59,8 +38,16 @@ function useSpecifierExpansion() {
           min < current ? Math.max(current - OUTCOME_BULK_SIZE, min) : min,
       });
     },
-    isOutcomeIncreseable,
-    isOutcomeDecreaseable,
+    isIncreasable(market: SportEventMarket, specifier: string) {
+      const { max, current } = compute(market, specifier);
+
+      return max > current;
+    },
+    isDecreasable(market: SportEventMarket, specifier: string) {
+      const { min, current } = compute(market, specifier);
+
+      return min < current;
+    },
   };
 }
 

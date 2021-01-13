@@ -2,17 +2,17 @@ import react, { ReactNode, useEffect, useState } from "react";
 import useSWR from "swr";
 
 type Context = {
-  isMarketSelected: (marketId: number, specifier?: string) => boolean;
-  toggleMarketSelection: (marketId: number, specifier: string) => void;
-  selectAllMarkets: () => void;
-  deselectAllMarkets: () => void;
+  isSelected: (marketId: number, specifier?: string) => boolean;
+  toggle: (marketId: number, specifier: string) => void;
+  selectAll: () => void;
+  deselectAll: () => void;
 };
 
 export const MarketSelectionContext = react.createContext<Context>({
-  isMarketSelected: () => false,
-  toggleMarketSelection: () => undefined,
-  selectAllMarkets: () => undefined,
-  deselectAllMarkets: () => undefined,
+  isSelected: () => false,
+  toggle: () => undefined,
+  selectAll: () => undefined,
+  deselectAll: () => undefined,
 });
 
 export function MarketSelectionContextProvider(props: { children: ReactNode }) {
@@ -25,7 +25,7 @@ export function MarketSelectionContextProvider(props: { children: ReactNode }) {
     }
   }, [event.data?.defaultMarketSelection]);
 
-  function isMarketSelected(id: number, specifier?: string) {
+  function isSelected(id: number, specifier?: string) {
     if (typeof specifier === "undefined") {
       return selection.some((item) => item.id === id);
     }
@@ -35,8 +35,8 @@ export function MarketSelectionContextProvider(props: { children: ReactNode }) {
     );
   }
 
-  function toggleMarketSelection(id: number, specifier: string) {
-    if (isMarketSelected(id, specifier)) {
+  function toggle(id: number, specifier: string) {
+    if (isSelected(id, specifier)) {
       return setSelection(
         selection.filter(
           (item) => item.id !== id || item.specifier !== specifier
@@ -47,7 +47,7 @@ export function MarketSelectionContextProvider(props: { children: ReactNode }) {
     return setSelection([...selection, { id, specifier }]);
   }
 
-  function selectAllMarkets() {
+  function selectAll() {
     const all: MarketSelection[] = [];
 
     for (const market of event.data!.markets) {
@@ -59,17 +59,17 @@ export function MarketSelectionContextProvider(props: { children: ReactNode }) {
     setSelection(all);
   }
 
-  function deselectAllMarkets() {
+  function deselectAll() {
     setSelection([]);
   }
 
   return (
     <MarketSelectionContext.Provider
       value={{
-        isMarketSelected,
-        toggleMarketSelection,
-        selectAllMarkets,
-        deselectAllMarkets,
+        isSelected,
+        toggle,
+        selectAll,
+        deselectAll,
       }}
     >
       {props.children}

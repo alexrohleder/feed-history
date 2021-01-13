@@ -7,11 +7,7 @@ type Props = {
 };
 
 function MarketSelection(props: Props) {
-  const context = useContext(MarketSelectionContext);
-  const isSelected = context.isMarketSelected;
-  const toggleSelection = context.toggleMarketSelection;
-  const onSelectAll = context.selectAllMarkets;
-  const onDeselectAll = context.deselectAllMarkets;
+  const marketSelection = useContext(MarketSelectionContext);
   const [search, setSearch] = useState("");
 
   if (props.markets.length === 0) {
@@ -28,8 +24,8 @@ function MarketSelection(props: Props) {
         <label>
           <input
             type="checkbox"
-            checked={isSelected(marketId, specifier)}
-            onChange={() => toggleSelection(marketId, specifier)}
+            checked={marketSelection.isSelected(marketId, specifier)}
+            onChange={() => marketSelection.toggle(marketId, specifier)}
           />
           {name}
         </label>
@@ -90,8 +86,8 @@ function MarketSelection(props: Props) {
         )}
       </div>
       <div className="MarketSelection_Footer">
-        <button onClick={onSelectAll}>Select All</button>
-        <button onClick={onDeselectAll}>Deselect All</button>
+        <button onClick={marketSelection.selectAll}>Select All</button>
+        <button onClick={marketSelection.deselectAll}>Deselect All</button>
       </div>
     </div>
   );
