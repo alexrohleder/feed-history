@@ -240,6 +240,20 @@
   }
 }
 
+// diagonal lines on empty cols
+
+.EntriesTable td.empty {
+  background: repeating-linear-gradient(
+      45deg,
+      #e5e7eb 0,
+      #e5e7eb 1px,
+      transparent 0,
+      transparent 50%
+    )
+    fixed;
+  background-size: 10px 10px;
+}
+
 // footer
 
 .EntriesTableFooter {

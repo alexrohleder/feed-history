@@ -61,7 +61,7 @@ function EntriesTable(props: Props) {
 
         if (entry.type !== "Odds change") {
           for (let row = 0; row < rowCount; row++) {
-            rowsWithCols[row].push(<td key={col} />);
+            rowsWithCols[row].push(<td key={col} className="empty" />);
           }
         } else {
           // should never happen, but for safety lets treat
