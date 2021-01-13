@@ -4,7 +4,7 @@ function getPageQuery() {
   const searchParams = new URLSearchParams(window.location.search);
   const pageQuery = searchParams.get("page");
 
-  return pageQuery === null ? 1 : parseInt(pageQuery, 10);
+  return pageQuery === null ? 0 : Math.max(parseInt(pageQuery, 10) - 1, 0);
 }
 
 const defaultPage = getPageQuery();
@@ -14,7 +14,14 @@ function usePage(): [number, (page: number) => void] {
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
-    searchParams.set("page", page.toString());
+    const currentPage = searchParams.get("page");
+    const newPage = (page + 1).toString();
+
+    if (currentPage === newPage) {
+      return;
+    }
+
+    searchParams.set("page", newPage);
 
     const path =
       window.location.protocol +

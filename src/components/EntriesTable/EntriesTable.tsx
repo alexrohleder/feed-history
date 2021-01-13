@@ -71,11 +71,12 @@ function EntriesTable(props: Props) {
           const { outcomes } = entry.markets[market.id].specifiers[specifier];
 
           for (let row = 0; row < rowCount; row++) {
-            let name, odds;
+            let name, odds, changedFromOdds;
 
             if (isMatchingSearch(outcomes[row].name, outcomeSearchTerm)) {
               name = outcomes[row].name;
               odds = outcomes[row].odds.toFixed(2);
+              changedFromOdds = outcomes[row].changedFromOdds?.toFixed(2);
             }
 
             rowsWithCols[row].push(
@@ -87,6 +88,12 @@ function EntriesTable(props: Props) {
             rowsWithCols[row].push(
               <td key={`${col}:o`} className="outcome-odds" title={odds}>
                 {odds}
+                {changedFromOdds && (
+                  <div
+                    className="outcome-odds-changed"
+                    title={`Odds changed from ${changedFromOdds} to ${odds}`}
+                  />
+                )}
               </td>
             );
           }

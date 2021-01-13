@@ -2,10 +2,6 @@
   height: calc(100vh - 80px);
   overflow: scroll;
 
-  * {
-    box-sizing: border-box;
-  }
-
   th,
   td {
     height: 28px;
@@ -85,6 +81,15 @@
     border-top: 1px solid #9ca3af;
     border-right: 1px solid #9ca3af;
   }
+
+  tbody tr:first-child td,
+  tbody tr:first-child th {
+    border-top: 2px solid #6b7280;
+  }
+
+  .outcome-name {
+    border-right-color: #e5e7eb;
+  }
 }
 
 // hover effects
@@ -140,7 +145,7 @@
     position: sticky;
     left: 0;
     z-index: 2;
-    top: 97px;
+    top: 96px;
 
     &.specifier {
       left: 136px;
@@ -168,6 +173,23 @@
   tbody:hover,
   tbody tr:hover {
     background-color: #fff;
+  }
+}
+
+// change indicator
+
+.EntriesTable .outcome-odds {
+  position: relative;
+  overflow: hidden;
+
+  .outcome-odds-changed {
+    width: 8px;
+    height: 8px;
+    background-color: orangeRed;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    transform: rotate(45deg);
   }
 }
 
@@ -203,7 +225,7 @@
 
       a {
         display: inline-block;
-        min-width: 2ch;
+        min-width: 4ch;
         text-align: center;
         padding: 8px;
         margin: 0 4px;
