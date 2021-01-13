@@ -49,6 +49,7 @@ function EntriesTable(props: Props) {
       // defining the matrix of rows and columns, see as [[col, col, col], [col, col, col]].
       const rowCount = expansion.count(market, specifier);
       const rowsWithCols: ReactNode[][] = newArray(rowCount).map(() => []);
+      const rowsWithOdds: boolean[] = newArray(rowCount).fill(false);
 
       // looping columns, see entries as columns and outcomes as rows
       for (const col in props.entries) {
@@ -61,7 +62,6 @@ function EntriesTable(props: Props) {
         } else {
           // should never happen, but for safety lets treat
           if (!entry.markets[market.id].specifiers[specifier]) {
-            console.log("ué");
             continue;
           }
 
@@ -70,27 +70,31 @@ function EntriesTable(props: Props) {
 
           for (let row = 0; row < rowCount; row++) {
             const outcome = outcomes[row];
-            const style = { backgroundColor: STATUS_COLOR[status] };
-            let name, odds, changedFromOdds;
 
-            if (search.isOutcomeVisible(outcome.name)) {
-              name = outcome.name;
-              odds = outcome.odds.toFixed(2);
-              changedFromOdds = outcome.changedFromOdds?.toFixed(2);
-
-              if (!outcome.active) {
-                style.backgroundColor = INACTIVE_COLOR;
-              }
+            if (!search.isOutcomeVisible(outcome.name)) {
+              continue;
             }
+
+            // we use this
+            rowsWithOdds[row] = true;
+
+            const odds = outcome.odds.toFixed(2);
+            const changedFromOdds = outcome.changedFromOdds?.toFixed(2);
+
+            const style = {
+              backgroundColor: outcome.active
+                ? STATUS_COLOR[status]
+                : INACTIVE_COLOR,
+            };
 
             rowsWithCols[row].push(
               <td
                 key={`${col}:n`}
                 className="outcome-name"
-                title={name}
+                title={outcome.name}
                 style={style}
               >
-                {name}
+                {outcome.name}
               </td>
             );
 
@@ -114,8 +118,9 @@ function EntriesTable(props: Props) {
         }
       }
 
-      marketRowSpan += rowsWithCols.length;
-      rowsBySpecifier.push({ name: specifier, rows: rowsWithCols });
+      const rows = rowsWithCols.filter((_, row) => rowsWithOdds[row]);
+      marketRowSpan += rows.length;
+      rowsBySpecifier.push({ name: specifier, rows });
     }
 
     rows.push(
