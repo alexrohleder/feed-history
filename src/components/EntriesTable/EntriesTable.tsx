@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import newArray from "new-array";
-import { ReactNode, useContext } from "react";
+import { ReactNode, useContext, useState } from "react";
 import { MarketSelectionContext } from "../../context/MarketSelectionContext";
 import { SearchContext } from "../../context/SearchContext";
 import useSpecifierExpansion from "./hooks/useSpecifierExpansion";
@@ -20,6 +20,7 @@ const isMatchingSearch = (haystack: string, needle: string) =>
 
 function EntriesTable(props: Props) {
   const { isMarketSelected } = useContext(MarketSelectionContext);
+  const [isStatisticsVisible, setStatisticsVisibility] = useState(false);
   const { specifierSearchTerm, outcomeSearchTerm } = useContext(SearchContext);
 
   const {
@@ -176,6 +177,20 @@ function EntriesTable(props: Props) {
             <div>Type</div>
             <div>Match status</div>
             <div>Score</div>
+            <div className="statistics header">
+              Statistics{" "}
+              <button
+                className="action"
+                onClick={() => setStatisticsVisibility(!isStatisticsVisible)}
+                title="Toggle statistics visibility"
+              >
+                {isStatisticsVisible ? (
+                  <span>&#708;</span>
+                ) : (
+                  <span>&#709;</span>
+                )}
+              </button>
+            </div>
           </th>
           {props.entries.map((entry) => (
             <th
@@ -186,6 +201,21 @@ function EntriesTable(props: Props) {
               <div>{entry.type}</div>
               <div>{entry.status}</div>
               <div>{entry.score}</div>
+              <div className="statistics">
+                {entry.statistics &&
+                  (isStatisticsVisible ? (
+                    <ul>
+                      {Object.keys(entry.statistics).map((statistic) => (
+                        <li>
+                          <b>{statistic}</b>
+                          {entry.statistics?.[statistic]}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <div className="empty">Contains Statistics</div>
+                  ))}
+              </div>
             </th>
           ))}
         </tr>

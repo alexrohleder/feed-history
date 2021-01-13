@@ -15,6 +15,12 @@ const feed: Feed = {
       timestamp: 1609835718539,
       status: "1st half",
       score: "home 0 — away 0",
+      statistics: {
+        yellow_cards: "home 0 — away 0",
+        red_cards: "home 0 — away 0",
+        yellow_red_cards: "home 0 — away 0",
+        corners: "home 0 — away 0",
+      },
       markets: {
         "1": {
           specifiers: {
