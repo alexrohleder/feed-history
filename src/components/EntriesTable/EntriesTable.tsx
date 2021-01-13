@@ -68,25 +68,37 @@ function EntriesTable(props: Props) {
             continue;
           }
 
-          const { outcomes } = entry.markets[market.id].specifiers[specifier];
+          const specifierObj = entry.markets[market.id].specifiers[specifier];
+          const { outcomes, status } = specifierObj;
 
           for (let row = 0; row < rowCount; row++) {
+            const outcome = outcomes[row];
             let name, odds, changedFromOdds;
+            let flags = `status-${status}`;
 
-            if (isMatchingSearch(outcomes[row].name, outcomeSearchTerm)) {
-              name = outcomes[row].name;
-              odds = outcomes[row].odds.toFixed(2);
-              changedFromOdds = outcomes[row].changedFromOdds?.toFixed(2);
+            if (isMatchingSearch(outcome.name, outcomeSearchTerm)) {
+              name = outcome.name;
+              odds = outcome.odds.toFixed(2);
+              changedFromOdds = outcome.changedFromOdds?.toFixed(2);
+              flags += outcome.active ? "" : " inactive";
             }
 
             rowsWithCols[row].push(
-              <td key={`${col}:n`} className="outcome-name" title={name}>
+              <td
+                key={`${col}:n`}
+                className={`outcome-name ${flags}`}
+                title={name}
+              >
                 {name}
               </td>
             );
 
             rowsWithCols[row].push(
-              <td key={`${col}:o`} className="outcome-odds" title={odds}>
+              <td
+                key={`${col}:o`}
+                className={`outcome-odds ${flags}`}
+                title={odds}
+              >
                 {odds}
                 {changedFromOdds && (
                   <div

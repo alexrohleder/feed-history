@@ -193,6 +193,22 @@
   }
 }
 
+// status colors
+
+.EntriesTable {
+  .status-1 {
+    background-color: #fecaca;
+  }
+
+  .status-2 {
+    background-color: #fed7aa;
+  }
+
+  .inactive {
+    background-color: #e4e4e7;
+  }
+}
+
 // footer
 
 .EntriesTableFooter {

@@ -19,7 +19,7 @@ const feed: Feed = {
         "1": {
           specifiers: {
             default: {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "Denmark (Teok)",
@@ -43,7 +43,7 @@ const feed: Feed = {
         "14": {
           specifiers: {
             "Some super long specifier name": {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "Denmark (Teok) (0:1)",
@@ -63,7 +63,7 @@ const feed: Feed = {
               ],
             },
             "0:2": {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "Denmark (Teok) (0:2)",
@@ -83,7 +83,7 @@ const feed: Feed = {
               ],
             },
             "1:0": {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "Denmark (Teok) (1:0)",
@@ -107,7 +107,7 @@ const feed: Feed = {
         "18": {
           specifiers: {
             "4.5": {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "Denmark (Teok) (4.5)",
@@ -122,7 +122,7 @@ const feed: Feed = {
               ],
             },
             "4": {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "Denmark (Teok) (4)",
@@ -137,7 +137,7 @@ const feed: Feed = {
               ],
             },
             "3.75": {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "Denmark (Teok) (3.75)",
@@ -156,7 +156,7 @@ const feed: Feed = {
         "1000": {
           specifiers: {
             e03keqp3: {
-              status: 1,
+              status: 0,
               outcomes: [
                 { name: "ABBOTT, JAMIE", active: true, odds: 0.0 },
                 { name: "AN, BYEONG-HUN", active: true, odds: 0.33 },
@@ -185,7 +185,7 @@ const feed: Feed = {
               ],
             },
             awiqkd49: {
-              status: 1,
+              status: 0,
               outcomes: [
                 { name: "ABBOTT, JAMIE", active: true, odds: 0.0 },
                 { name: "AN, BYEONG-HUN", active: true, odds: 0.33 },
@@ -230,7 +230,7 @@ const feed: Feed = {
         "1": {
           specifiers: {
             default: {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "Denmark (Teok)",
@@ -277,7 +277,7 @@ const feed: Feed = {
               ],
             },
             "0:2": {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "Denmark (Teok) (0:2)",
@@ -300,7 +300,7 @@ const feed: Feed = {
               ],
             },
             "1:0": {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "Denmark (Teok) (1:0)",
@@ -324,12 +324,12 @@ const feed: Feed = {
         "18": {
           specifiers: {
             "4.5": {
-              status: 1,
+              status: 2,
               outcomes: [
                 {
                   name: "Denmark (Teok) (4.5)",
                   odds: 1.6,
-                  active: true,
+                  active: false,
                 },
                 {
                   name: "Ivory Coast (Vost) (4.5)",
@@ -340,7 +340,7 @@ const feed: Feed = {
               ],
             },
             "4": {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "Denmark (Teok) (4)",
@@ -355,7 +355,7 @@ const feed: Feed = {
               ],
             },
             "3.75": {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "Denmark (Teok) (3.75)",
@@ -374,7 +374,7 @@ const feed: Feed = {
         "1000": {
           specifiers: {
             e03keqp3: {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "ABBOTT, JAMIE",
@@ -438,7 +438,7 @@ const feed: Feed = {
               ],
             },
             awiqkd49: {
-              status: 1,
+              status: 0,
               outcomes: [
                 {
                   name: "ABBOTT, JAMIE",
