@@ -204,6 +204,20 @@
   .inactive {
     background-color: #e4e4e7;
   }
+
+  tr:hover {
+    .status-1 {
+      background-color: #fca5a5;
+    }
+
+    .status-2 {
+      background-color: #fdba74;
+    }
+
+    .inactive {
+      background-color: #d4d4d8;
+    }
+  }
 }
 
 // statistics
