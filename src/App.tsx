@@ -1,5 +1,5 @@
 import { SWRConfig } from "swr";
-import AppErrorBoundary from "./AppErrorBoundary";
+import { Component } from 'react';
 import EntriesTableContainer from "./components/EntriesTable";
 import HeaderContainer from "./components/Header";
 import { MarketSelectionContextProvider } from "./context/MarketSelectionContext";
@@ -43,21 +43,39 @@ const config = {
   revalidateOnFocus: false,
 };
 
-function App() {
-  return (
-    <div className="App">
-      <SWRConfig value={config}>
-        <AppErrorBoundary>
+class App extends Component {
+  state = {
+    hasError: false,
+  };
+
+  static getDerivedStateFromError() {
+    return {
+      hasError: true,
+    };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="AppErrorBoundary">
+          <div>Oops, something went wrong while fetching the data.</div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="App">
+        <SWRConfig value={config}>
           <SearchContextProvider>
             <MarketSelectionContextProvider>
               <HeaderContainer />
               <EntriesTableContainer />
             </MarketSelectionContextProvider>
           </SearchContextProvider>
-        </AppErrorBoundary>
-      </SWRConfig>
-    </div>
-  );
+        </SWRConfig>
+      </div>
+    );
+  }
 }
 
 export default App;

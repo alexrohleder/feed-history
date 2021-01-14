@@ -1,12 +1,11 @@
 import { ReactNode, useContext, useState } from "react";
-import { MarketSelectionContext } from "../../../context/MarketSelectionContext";
-import "./MarketSelection.scss";
+import { MarketSelectionContext } from "../../context/MarketSelectionContext";
 
 type Props = {
   markets: SportEventMarket[];
 };
 
-function MarketSelection(props: Props) {
+function HeaderPanelMarketSelection(props: Props) {
   const marketSelection = useContext(MarketSelectionContext);
   const [search, setSearch] = useState("");
 
@@ -20,7 +19,7 @@ function MarketSelection(props: Props) {
     specifier: string
   ) => {
     return (
-      <div key={name} className="MarketSelection_Item">
+      <div key={name} className="HeaderPanelMarketSelection_Item">
         <label>
           <input
             type="checkbox"
@@ -51,7 +50,7 @@ function MarketSelection(props: Props) {
 
       if (specifiers.length) {
         content.push(
-          <div key={market.name} className="MarketSelection_Group">
+          <div key={market.name} className="HeaderPanelMarketSelection_Group">
             <label>
               <input
                 type="checkbox"
@@ -68,8 +67,8 @@ function MarketSelection(props: Props) {
   }
 
   return (
-    <div className="MarketSelection">
-      <label className="MarketSelection_Search">
+    <div className="HeaderPanelMarketSelection">
+      <label className="HeaderPanelMarketSelection_Search">
         Search Markets for Selection
         <input
           type="search"
@@ -80,14 +79,14 @@ function MarketSelection(props: Props) {
           autoFocus
         />
       </label>
-      <div className="MarketSelection_Grid">
+      <div className="HeaderPanelMarketSelection_Grid">
         {content.length ? (
           <>{content}</>
         ) : (
           <div>No market nor specifier found with your search term</div>
         )}
       </div>
-      <div className="MarketSelection_Footer">
+      <div className="HeaderPanelMarketSelection_Footer">
         <button onClick={marketSelection.selectAll}>Select All</button>
         <button onClick={marketSelection.deselectAll}>Deselect All</button>
       </div>
@@ -95,4 +94,4 @@ function MarketSelection(props: Props) {
   );
 }
 
-export default MarketSelection;
+export default HeaderPanelMarketSelection;

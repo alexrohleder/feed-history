@@ -1,7 +1,5 @@
 /// <reference types="react-scripts" />
 
-declare module "group-by";
-declare module "new-array";
 declare module "react-html-table-to-excel";
 declare module "react-multivalue-text-input";
 
