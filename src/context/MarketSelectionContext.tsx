@@ -3,7 +3,7 @@ import useSWR from "swr";
 
 type Context = {
   isSelected: (marketId: number, specifier?: string) => boolean;
-  toggle: (marketId: number, specifier: string) => void;
+  toggle: (market: SportEventMarket, specifier?: string) => void;
   selectAll: () => void;
   deselectAll: () => void;
 };
@@ -35,16 +35,31 @@ export function MarketSelectionContextProvider(props: { children: ReactNode }) {
     );
   }
 
-  function toggle(id: number, specifier: string) {
-    if (isSelected(id, specifier)) {
+  function toggle(market: SportEventMarket, specifier?: string) {
+    if (isSelected(market.id, specifier)) {
       return setSelection(
         selection.filter(
-          (item) => item.id !== id || item.specifier !== specifier
+          specifier
+            ? (item) => item.id !== market.id || item.specifier !== specifier
+            : (item) => item.id !== market.id
         )
       );
     }
 
-    return setSelection([...selection, { id, specifier }]);
+    return setSelection([
+      ...selection,
+      ...(specifier
+        ? [
+            {
+              id: market.id,
+              specifier,
+            },
+          ]
+        : Object.keys(market.specifiers).map((s) => ({
+            id: market.id,
+            specifier: s,
+          }))),
+    ]);
   }
 
   function selectAll() {

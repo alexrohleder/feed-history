@@ -10,22 +10,22 @@ function MarketSelection(props: Props) {
   const marketSelection = useContext(MarketSelectionContext);
   const [search, setSearch] = useState("");
 
-  if (props.markets.length === 0) {
-    return <div className="HeaderPanel_Message">No markets found</div>;
-  }
-
   const content = [];
   const searchTerm = search.toLowerCase().trim();
   const isVisible = (term: string) => term.toLowerCase().includes(searchTerm);
 
-  const buildItem = (name: string, marketId: number, specifier: string) => {
+  const buildItem = (
+    name: string,
+    market: SportEventMarket,
+    specifier: string
+  ) => {
     return (
-      <div className="MarketSelection_Item">
+      <div key={name} className="MarketSelection_Item">
         <label>
           <input
             type="checkbox"
-            checked={marketSelection.isSelected(marketId, specifier)}
-            onChange={() => marketSelection.toggle(marketId, specifier)}
+            checked={marketSelection.isSelected(market.id, specifier)}
+            onChange={() => marketSelection.toggle(market, specifier)}
           />
           {name}
         </label>
@@ -38,26 +38,28 @@ function MarketSelection(props: Props) {
 
     if (market.specifiers.default) {
       if (isMarketVisible) {
-        content.push(buildItem(market.name, market.id, "default"));
+        content.push(buildItem(market.name, market, "default"));
       }
     } else {
       const specifiers: ReactNode[] = [];
 
       for (const specifier in market.specifiers) {
         if (isMarketVisible || isVisible(specifier)) {
-          specifiers.push(buildItem(specifier, market.id, specifier));
+          specifiers.push(buildItem(specifier, market, specifier));
         }
       }
 
       if (specifiers.length) {
         content.push(
-          <div className="MarketSelection_Group">
-            <input
-              type="checkbox"
-              title="You can only select specifiers of this market"
-              disabled
-            />
-            {market.name}
+          <div key={market.name} className="MarketSelection_Group">
+            <label>
+              <input
+                type="checkbox"
+                checked={marketSelection.isSelected(market.id)}
+                onChange={() => marketSelection.toggle(market)}
+              />
+              {market.name}
+            </label>
             {specifiers}
           </div>
         );
@@ -82,9 +84,7 @@ function MarketSelection(props: Props) {
         {content.length ? (
           <>{content}</>
         ) : (
-          <div className="HeaderPanel_Message">
-            No market nor specifier found with your search term
-          </div>
+          <div>No market nor specifier found with your search term</div>
         )}
       </div>
       <div className="MarketSelection_Footer">
