@@ -16,8 +16,10 @@ function useSpecifierExpansion() {
 
   return {
     count(market: SportEventMarket, specifier: string) {
-      return market.specifiers[specifier].length < OUTCOME_BULK_SIZE
-        ? market.specifiers[specifier]
+      const max = market.specifiers[specifier].length;
+
+      return max < OUTCOME_BULK_SIZE
+        ? max
         : state[`${market.id}:${specifier}`] ?? OUTCOME_BULK_SIZE;
     },
     increase(market: SportEventMarket, specifier: string) {

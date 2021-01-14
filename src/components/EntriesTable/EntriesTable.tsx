@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import { ReactNode, useContext, useState } from "react";
 import { MarketSelectionContext } from "../../context/MarketSelectionContext";
 import { SearchContext } from "../../context/SearchContext";
-import EntriesTableRow from "./EntriesTableRow";
+import EntriesTableCol from "./EntriesTableCol";
 import EntriesTableRowHeader from "./EntriesTableRowHeader";
 import useSpecifierExpansion from "./hooks/useSpecifierExpansion";
 
@@ -55,7 +55,8 @@ function EntriesTable(props: Props) {
         if (isSearchingOutcomes || specifierRows.length < expandedRowsCount) {
           specifierRows.push(
             props.entries.map((entry) => (
-              <EntriesTableRow
+              <EntriesTableCol
+                key={entry.timestamp}
                 entry={entry}
                 marketId={market.id}
                 specifier={specifier}
@@ -130,7 +131,7 @@ function EntriesTable(props: Props) {
                   (isStatisticsVisible ? (
                     <ul>
                       {Object.keys(entry.statistics).map((statistic) => (
-                        <li>
+                        <li key={statistic}>
                           <b>{statistic}</b>
                           {entry.statistics?.[statistic]}
                         </li>

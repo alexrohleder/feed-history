@@ -26,12 +26,13 @@ function EntriesTableRowHeader({
   if (isFirstRow && isFirstSpecifier) {
     header.push(
       <th
+        key="market"
         rowSpan={marketRowSpan}
         className="market"
         title={market.name}
         colSpan={isSpecifierMarket ? 1 : 2}
       >
-        {isSpecifierMarket ? specifier.name : market.name}
+        {market.name}
       </th>
     );
   }
@@ -40,6 +41,7 @@ function EntriesTableRowHeader({
     if (isSpecifierMarket) {
       header.push(
         <th
+          key="specifier"
           rowSpan={specifier.rows.length}
           className="specifier"
           title={specifier.name}
@@ -53,7 +55,7 @@ function EntriesTableRowHeader({
     const isDecreasable = expansion.isDecreasable(market, specifier.name);
 
     header.push(
-      <th className="actions" rowSpan={specifier.rows.length}>
+      <th key="actions" className="actions" rowSpan={specifier.rows.length}>
         {(isIncreasable || isDecreasable) && !isSearchingOutcomes && (
           <>
             <button

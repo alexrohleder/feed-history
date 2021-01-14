@@ -10,7 +10,7 @@ type Props = {
 const STATUS_COLOR = ["", "#fecaca", "#fed7aa"];
 const INACTIVE_COLOR = "#e4e4e7";
 
-function EntriesTableRow({ entry, marketId, specifier, outcomeName }: Props) {
+function EntriesTableCol({ entry, marketId, specifier, outcomeName }: Props) {
   if (entry.type !== "Odds change") {
     return <td key={entry.timestamp} className="empty" />;
   }
@@ -59,4 +59,4 @@ function EntriesTableRow({ entry, marketId, specifier, outcomeName }: Props) {
   return <>{cols}</>;
 }
 
-export default EntriesTableRow;
+export default EntriesTableCol;
