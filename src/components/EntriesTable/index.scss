@@ -1,6 +1,7 @@
 .EntriesTableContainer {
   height: calc(100vh - 80px);
   overflow: scroll;
+  border-bottom: 1px solid #9ca3af;
 
   th,
   td {
@@ -35,9 +36,14 @@
 // widths
 
 .EntriesTable {
-  thead th.labels {
-    min-width: 260px;
-    max-width: 260px;
+  thead th {
+    min-width: 175px;
+    max-width: 175px;
+
+    &.labels {
+      min-width: 260px;
+      max-width: 260px;
+    }
   }
 
   th.market {
@@ -85,6 +91,16 @@
 
   .outcome-name {
     border-right-color: #e5e7eb;
+  }
+
+  tbody:nth-child(2) tr:first-child td,
+  tbody:nth-child(2) tr:first-child th {
+    border-top: 0 !important;
+  }
+
+  tr td:last-child,
+  thead th:last-child {
+    border-right: 0 !important;
   }
 }
 
@@ -163,10 +179,6 @@
     color: #9ca3af;
   }
 
-  tbody {
-    text-align: center;
-  }
-
   tbody:hover,
   tbody tr:hover {
     background-color: #fff;
@@ -216,6 +228,10 @@
       white-space: pre-wrap;
       margin-bottom: 6px;
 
+      &:last-child {
+        margin-bottom: 0;
+      }
+
       b {
         font-weight: bold;
         display: block;
@@ -247,7 +263,6 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  border-top: 1px solid #9ca3af;
 
   ul {
     display: inline-block;

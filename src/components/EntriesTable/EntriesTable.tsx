@@ -145,7 +145,15 @@ function EntriesTable(props: Props) {
           ))}
         </tr>
       </thead>
-      {rows}
+      {rows.length ? (
+        rows
+      ) : (
+        <tr>
+          <td colSpan={1000}>
+            No entries visible. Please adjust your filters.
+          </td>
+        </tr>
+      )}
     </table>
   );
 }

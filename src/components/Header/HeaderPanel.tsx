@@ -1,8 +1,10 @@
-import { ReactNode, useRef } from "react";
+import { useRef } from "react";
+import FilterPanel from "./Panels/FilterPanel";
+import MarketSelection from "./Panels/MarketSelection";
 
 type Props = {
   onClose: () => void;
-  children: ReactNode;
+  markets: SportEventMarket[];
 };
 
 function HeaderPanel(props: Props) {
@@ -10,7 +12,8 @@ function HeaderPanel(props: Props) {
 
   return (
     <div className="HeaderPanel" ref={ref}>
-      {props.children}
+      <FilterPanel />
+      <MarketSelection markets={props.markets} />
     </div>
   );
 }

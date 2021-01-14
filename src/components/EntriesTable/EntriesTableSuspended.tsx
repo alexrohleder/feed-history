@@ -9,12 +9,13 @@ function EntriesTableSuspended() {
               <div>Type</div>
               <div>Match status</div>
               <div>Score</div>
+              <div className="statistics header">Statistics</div>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>loading entries, please wait.</td>
+            <td>Loading entries, please wait.</td>
           </tr>
         </tbody>
       </table>

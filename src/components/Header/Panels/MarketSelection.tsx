@@ -67,18 +67,20 @@ function MarketSelection(props: Props) {
 
   return (
     <div className="MarketSelection">
-      <input
-        type="search"
-        value={search}
-        onChange={(event) => setSearch(event.target.value)}
-        name="market-selection"
-        className="MarketSelection_Search"
-        placeholder="Search market or specifier name..."
-        autoFocus
-      />
+      <label className="MarketSelection_Search">
+        Search Markets for Selection
+        <input
+          type="search"
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+          name="market-selection"
+          placeholder="Search market or specifier name..."
+          autoFocus
+        />
+      </label>
       <div className="MarketSelection_Grid">
         {content.length ? (
-          content
+          <>{content}</>
         ) : (
           <div className="HeaderPanel_Message">
             No market nor specifier found with your search term

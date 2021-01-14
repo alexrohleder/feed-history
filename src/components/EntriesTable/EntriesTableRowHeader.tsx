@@ -21,7 +21,6 @@ function EntriesTableRowHeader({
   expansion,
 }: Props) {
   const header: ReactNode[] = [];
-  const isSpecifierMarket = specifier.name !== "default";
 
   if (isFirstRow && isFirstSpecifier) {
     header.push(
@@ -30,7 +29,6 @@ function EntriesTableRowHeader({
         rowSpan={marketRowSpan}
         className="market"
         title={market.name}
-        colSpan={isSpecifierMarket ? 1 : 2}
       >
         {market.name}
       </th>
@@ -38,18 +36,16 @@ function EntriesTableRowHeader({
   }
 
   if (isFirstRow) {
-    if (isSpecifierMarket) {
-      header.push(
-        <th
-          key="specifier"
-          rowSpan={specifier.rows.length}
-          className="specifier"
-          title={specifier.name}
-        >
-          {specifier.name}
-        </th>
-      );
-    }
+    header.push(
+      <th
+        key="specifier"
+        rowSpan={specifier.rows.length}
+        className="specifier"
+        title={specifier.name}
+      >
+        {specifier.name}
+      </th>
+    );
 
     const isIncreasable = expansion.isIncreasable(market, specifier.name);
     const isDecreasable = expansion.isDecreasable(market, specifier.name);

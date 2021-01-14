@@ -3,23 +3,14 @@ import { useState } from "react";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import useSWR from "swr";
 import HeaderPanel from "./HeaderPanel";
-import FilterPanel from "./Panels/FilterPanel";
-import MarketSelection from "./Panels/MarketSelection";
-
-enum Panel {
-  MARKET_SELECTION,
-  FILTER,
-}
 
 function Header() {
   const { data } = useSWR<SportEvent>("event");
-  const [openPanel, setOpenPanel] = useState<Panel | null>(null);
+  const [isPanelOpen, setOpenPanel] = useState(false);
 
-  const getClassName = (panel: Panel) =>
-    openPanel === panel ? "Header_ActionButton active" : "Header_ActionButton";
-
-  const togglePanelOpeness = (panel: Panel) =>
-    setOpenPanel(openPanel === panel ? null : panel);
+  const filterButtonCn = isPanelOpen
+    ? "Header_ActionButton active"
+    : "Header_ActionButton";
 
   return (
     <div className="HeaderContainer">
@@ -39,27 +30,17 @@ function Header() {
             buttonText="Download as XLS"
           />
           <button
-            className={getClassName(Panel.MARKET_SELECTION)}
-            onClick={() => togglePanelOpeness(Panel.MARKET_SELECTION)}
-          >
-            Market Selection
-          </button>
-          <button
-            className={getClassName(Panel.FILTER)}
-            onClick={() => togglePanelOpeness(Panel.FILTER)}
+            className={filterButtonCn}
+            onClick={() => setOpenPanel(!isPanelOpen)}
           >
             Filter
           </button>
         </div>
-        {openPanel === Panel.MARKET_SELECTION && (
-          <HeaderPanel onClose={() => setOpenPanel(null)}>
-            <MarketSelection markets={data!.markets} />
-          </HeaderPanel>
-        )}
-        {openPanel === Panel.FILTER && (
-          <HeaderPanel onClose={() => setOpenPanel(null)}>
-            <FilterPanel />
-          </HeaderPanel>
+        {isPanelOpen && (
+          <HeaderPanel
+            markets={data!.markets}
+            onClose={() => setOpenPanel(false)}
+          />
         )}
       </header>
     </div>
