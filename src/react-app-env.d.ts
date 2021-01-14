@@ -16,7 +16,7 @@ type SportEvent = {
 type SportEventMarket = {
   id: number;
   name: string;
-  specifiers: Record<string, number>; // specifiers (default if none) and the count of outcomes within
+  specifiers: Record<string, string[]>; // specifiers (default if none) and the count of outcomes within
 };
 
 type MarketSelection = {
@@ -55,7 +55,7 @@ type FeedMarket = {
 
 type FeedMarketSpecifier = {
   status: FeedMarketStatus;
-  outcomes: FeedMarketOutcome[];
+  outcomes: Record<string, FeedMarketOutcome>;
 };
 
 enum FeedMarketStatus {

@@ -43,7 +43,7 @@ export function SearchContextProvider(props: { children: ReactNode }) {
 
     const target = haystack.toLowerCase();
 
-    return needles.some((needle) => target.includes(needle));
+    return needles.some((needle) => target.includes(needle.toLowerCase()));
   };
 
   return (

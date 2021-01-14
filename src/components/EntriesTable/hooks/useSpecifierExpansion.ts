@@ -6,7 +6,7 @@ function useSpecifierExpansion() {
   const [state, setState] = useState<Record<string, number>>({});
 
   const compute = (market: SportEventMarket, specifier: string) => {
-    const max = market.specifiers[specifier];
+    const max = market.specifiers[specifier].length;
     const min = Math.min(max, OUTCOME_BULK_SIZE);
     const token = `${market.id}:${specifier}`;
     const current = state[token] ?? min;
@@ -16,7 +16,7 @@ function useSpecifierExpansion() {
 
   return {
     count(market: SportEventMarket, specifier: string) {
-      return market.specifiers[specifier] < OUTCOME_BULK_SIZE
+      return market.specifiers[specifier].length < OUTCOME_BULK_SIZE
         ? market.specifiers[specifier]
         : state[`${market.id}:${specifier}`] ?? OUTCOME_BULK_SIZE;
     },
@@ -47,6 +47,9 @@ function useSpecifierExpansion() {
       const { min, current } = compute(market, specifier);
 
       return min < current;
+    },
+    canExpandTo(max: number) {
+      return max > OUTCOME_BULK_SIZE;
     },
   };
 }

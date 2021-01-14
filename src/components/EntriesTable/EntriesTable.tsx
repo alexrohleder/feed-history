@@ -1,8 +1,9 @@
 import { format } from "date-fns";
-import newArray from "new-array";
 import { ReactNode, useContext, useState } from "react";
 import { MarketSelectionContext } from "../../context/MarketSelectionContext";
 import { SearchContext } from "../../context/SearchContext";
+import EntriesTableRow from "./EntriesTableRow";
+import EntriesTableRowHeader from "./EntriesTableRowHeader";
 import useSpecifierExpansion from "./hooks/useSpecifierExpansion";
 
 type Props = {
@@ -15,9 +16,6 @@ const collator = new Intl.Collator(undefined, {
   sensitivity: "base",
 });
 
-const STATUS_COLOR = ["", "#fecaca", "#fed7aa"];
-const INACTIVE_COLOR = "#e4e4e7";
-
 function EntriesTable(props: Props) {
   const marketSelection = useContext(MarketSelectionContext);
   const [isStatisticsVisible, setStatisticsVisibility] = useState(false);
@@ -25,10 +23,10 @@ function EntriesTable(props: Props) {
   const expansion = useSpecifierExpansion();
 
   const rows = [];
+  const isSearchingOutcomes = search.outcomeTerms.length > 0;
 
   for (const market of props.markets) {
     if (!marketSelection.isSelected(market.id)) {
-      console.log("hmm");
       continue;
     }
 
@@ -42,130 +40,50 @@ function EntriesTable(props: Props) {
         !marketSelection.isSelected(market.id, specifier) ||
         !search.isSpecifierVisible(specifier)
       ) {
-        console.log("oho", search.isSpecifierVisible(specifier));
         continue;
       }
 
-      // defining the matrix of rows and columns, see as [[col, col, col], [col, col, col]].
-      const rowCount = expansion.count(market, specifier);
-      const rowsWithCols: ReactNode[][] = newArray(rowCount).map(() => []);
-      const rowsWithOdds: boolean[] = newArray(rowCount).fill(false);
+      const specifierRows: ReactNode[] = [];
+      const expandedRowsCount = expansion.count(market, specifier);
+      const outcomes = market.specifiers[specifier].sort(collator.compare);
 
-      // looping columns, see entries as columns and outcomes as rows
-      for (const col in props.entries) {
-        const entry = props.entries[col];
+      for (const outcomeName of outcomes) {
+        if (!search.isOutcomeVisible(outcomeName)) {
+          continue;
+        }
 
-        if (entry.type !== "Odds change") {
-          for (let row = 0; row < rowCount; row++) {
-            rowsWithCols[row].push(<td key={col} className="empty" />);
-          }
-        } else {
-          // should never happen, but for safety lets treat
-          if (!entry.markets[market.id].specifiers[specifier]) {
-            continue;
-          }
-
-          const specifierObj = entry.markets[market.id].specifiers[specifier];
-          const { outcomes, status } = specifierObj;
-
-          for (let row = 0; row < rowCount; row++) {
-            const outcome = outcomes[row];
-
-            if (!search.isOutcomeVisible(outcome.name)) {
-              continue;
-            }
-
-            // we use this
-            rowsWithOdds[row] = true;
-
-            const odds = outcome.odds.toFixed(2);
-            const changedFromOdds = outcome.changedFromOdds?.toFixed(2);
-
-            const style = {
-              backgroundColor: outcome.active
-                ? STATUS_COLOR[status]
-                : INACTIVE_COLOR,
-            };
-
-            rowsWithCols[row].push(
-              <td
-                key={`${col}:n`}
-                className="outcome-name"
-                title={outcome.name}
-                style={style}
-              >
-                {outcome.name}
-              </td>
-            );
-
-            rowsWithCols[row].push(
-              <td
-                key={`${col}:o`}
-                className="outcome-odds"
-                title={odds}
-                style={style}
-              >
-                {odds}
-                {changedFromOdds && (
-                  <div
-                    className="outcome-odds-changed"
-                    title={`Odds changed from ${changedFromOdds} to ${odds}`}
-                  />
-                )}
-              </td>
-            );
-          }
+        if (isSearchingOutcomes || specifierRows.length < expandedRowsCount) {
+          specifierRows.push(
+            props.entries.map((entry) => (
+              <EntriesTableRow
+                entry={entry}
+                marketId={market.id}
+                specifier={specifier}
+                outcomeName={outcomeName}
+              />
+            ))
+          );
         }
       }
 
-      const rows = rowsWithCols.filter((_, row) => rowsWithOdds[row]);
-      marketRowSpan += rows.length;
-      rowsBySpecifier.push({ name: specifier, rows });
+      marketRowSpan += specifierRows.length;
+      rowsBySpecifier.push({ name: specifier, rows: specifierRows });
     }
 
     rows.push(
       <tbody key={market.name}>
-        {rowsBySpecifier.flatMap((group, specifierIndex) =>
-          group.rows.map((cols, rowIndex) => (
-            <tr key={`${group.name}:${rowIndex}`}>
-              {/** if first row of first specifier then we place market name with rowSpan */}
-              {rowIndex === 0 && specifierIndex === 0 && (
-                <th
-                  rowSpan={marketRowSpan}
-                  className="market"
-                  title={market.name}
-                >
-                  {market.name}
-                </th>
-              )}
-              {/** if first row of an specifier we place specifier name and actions */}
-              {rowIndex === 0 && (
-                <>
-                  <th
-                    rowSpan={group.rows.length}
-                    className="specifier"
-                    title={group.name}
-                  >
-                    {group.name}
-                  </th>
-                  <th className="actions" rowSpan={group.rows.length}>
-                    <button
-                      disabled={!expansion.isIncreasable(market, group.name)}
-                      onClick={() => expansion.increase(market, group.name)}
-                      title={`Expand outcomes of specifier ${group.name} on market ${market.name}`}
-                    >
-                      +
-                    </button>
-                    <button
-                      disabled={!expansion.isDecreasable(market, group.name)}
-                      onClick={() => expansion.decrease(market, group.name)}
-                      title={`Collapse outcomes of specifier ${group.name} on market ${market.name}`}
-                    >
-                      -
-                    </button>
-                  </th>
-                </>
-              )}
+        {rowsBySpecifier.flatMap((specifier, specifierIndex) =>
+          specifier.rows.map((cols, rowIndex) => (
+            <tr key={`${specifier.name}:${rowIndex}`}>
+              <EntriesTableRowHeader
+                specifier={specifier}
+                isFirstRow={rowIndex === 0}
+                isFirstSpecifier={specifierIndex === 0}
+                isSearchingOutcomes={isSearchingOutcomes}
+                marketRowSpan={marketRowSpan}
+                market={market}
+                expansion={expansion}
+              />
               {cols}
             </tr>
           ))
