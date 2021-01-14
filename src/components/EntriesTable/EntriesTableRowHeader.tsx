@@ -31,7 +31,7 @@ function EntriesTableRowHeader({
         title={market.name}
         colSpan={isSpecifierMarket ? 1 : 2}
       >
-        {specifier.name}
+        {isSpecifierMarket ? specifier.name : market.name}
       </th>
     );
   }
