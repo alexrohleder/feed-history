@@ -148,7 +148,7 @@ function EntriesTable(props: Props) {
       {rows.length ? (
         rows
       ) : (
-        <tbody>
+        <tbody className="empty">
           <tr>
             <td colSpan={1000}>
               No entries visible. Please adjust your filters.
