@@ -100,6 +100,30 @@ const event: SportEvent = {
     { id: 14, specifier: "0:2" },
     { id: 14, specifier: "1:0" },
   ],
+  sportTree: [
+    {
+      key: "sr:event:1",
+      label: "Golf 1",
+      nodes: [
+        {
+          key: "sr:event:2",
+          label: "Golf 2",
+          nodes: [
+            {
+              key: "sr:event:3",
+              label: "Golf 3",
+              nodes: [],
+            },
+          ],
+        },
+        {
+          key: "sr:event:4",
+          label: "Golf 4",
+          nodes: [],
+        },
+      ],
+    },
+  ],
 };
 
 export default event;

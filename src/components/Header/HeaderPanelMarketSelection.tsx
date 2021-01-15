@@ -75,6 +75,7 @@ function HeaderPanelMarketSelection(props: Props) {
           value={search}
           onChange={(event) => setSearch(event.target.value)}
           name="market-selection"
+          className="HeaderPanel_Input"
           placeholder="Search market or specifier name..."
           autoFocus
         />

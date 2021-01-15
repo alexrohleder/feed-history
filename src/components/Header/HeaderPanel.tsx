@@ -19,6 +19,7 @@ function HeaderPanel(props: Props) {
           onItemDeleted={search.removeSpecifier}
           label="Search Specifiers"
           name="specifiers"
+          className="HeaderPanel_Input"
           placeholder="Separate values with comma or enter..."
         />
         <MultipleValueTextInput
@@ -26,6 +27,7 @@ function HeaderPanel(props: Props) {
           onItemDeleted={search.removeOutcome}
           label="Search Outcomes"
           name="outcomes"
+          className="HeaderPanel_Input"
           placeholder="Separate values with comma or enter..."
         />
       </div>

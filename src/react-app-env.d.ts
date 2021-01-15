@@ -3,12 +3,19 @@
 declare module "react-html-table-to-excel";
 declare module "react-multivalue-text-input";
 
+type SportTree = {
+  key: string;
+  label: string;
+  nodes: SportTree[];
+};
+
 type SportEvent = {
   urn: string;
   name: string;
   timestamp: number;
   markets: SportEventMarket[];
   defaultMarketSelection: MarketSelection[];
+  sportTree: SportTree[];
 };
 
 type SportEventMarket = {
