@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import TreeMenu from "react-simple-tree-menu";
 import useSWR from "swr";
@@ -10,23 +10,28 @@ function Header() {
   const [isPanelVisible, setPanelVisibility] = useState(false);
   const [isSportTreeVisible, setSportTreeVisibility] = useState(false);
 
-  const filterButtonCn = isPanelVisible
-    ? "Header_ActionButton active"
-    : "Header_ActionButton";
+  useEffect(() => {
+    if (isSportTreeVisible) {
+      (document.querySelector(".rstm-search") as HTMLInputElement)?.focus();
+    }
+  }, [isSportTreeVisible]);
 
   return (
     <div className="HeaderContainer">
       <header className="Header">
         <div className="Header_Meta">
           <h1>Feed History</h1>
-          <h2>{data!.name}</h2>
-          <h3>{format(data!.timestamp, "dd/MM/Y HH:mm:ss")} UTC</h3>
           <button
-            className="Header_ActionButton"
+            className={
+              isSportTreeVisible
+                ? "Header_ActionButton active"
+                : "Header_ActionButton"
+            }
             onClick={() => setSportTreeVisibility(!isSportTreeVisible)}
           >
-            ({data!.urn}){" "}
-            {isSportTreeVisible ? <span>&#708;</span> : <span>&#709;</span>}
+            <h2>{data!.name}</h2>
+            <h3>{format(data!.timestamp, "dd/MM/Y HH:mm:ss")} UTC</h3>(
+            {data!.urn})
           </button>
         </div>
         <div className="Header_Actions">
@@ -38,7 +43,11 @@ function Header() {
             buttonText="Download as XLS"
           />
           <button
-            className={filterButtonCn}
+            className={
+              isPanelVisible
+                ? "Header_ActionButton active"
+                : "Header_ActionButton"
+            }
             onClick={() => setPanelVisibility(!isPanelVisible)}
           >
             Filter

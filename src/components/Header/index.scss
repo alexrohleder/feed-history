@@ -23,7 +23,6 @@
     }
 
     &_Meta {
-      color: #fff;
       display: flex;
       align-items: center;
       gap: 1.5rem;
@@ -31,6 +30,16 @@
       h1,
       h2 {
         font-weight: 600;
+      }
+
+      h1 {
+        color: #fff;
+      }
+
+      button {
+        display: inline-flex;
+        gap: 1.5rem;
+        align-items: center;
       }
     }
 
