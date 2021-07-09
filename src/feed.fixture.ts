@@ -3,15 +3,15 @@ const feed: Feed = {
   pageCount: 25,
   entries: [
     {
-      type: "Fixture change",
+      type: "fixture_change",
       timestamp: 1609835641711,
     },
     {
-      type: "Fixture change",
+      type: "fixture_change",
       timestamp: 1609835642261,
     },
     {
-      type: "Odds change",
+      type: "odds_change",
       timestamp: 1609835718539,
       status: "1st half",
       score: "home 0 — away 0",
@@ -376,11 +376,11 @@ const feed: Feed = {
       },
     },
     {
-      type: "Bet start",
+      type: "bet_start",
       timestamp: 1609835652261,
     },
     {
-      type: "Odds change",
+      type: "odds_change",
       timestamp: 1609835718541,
       status: "1st half",
       score: "home 0 — away 0",

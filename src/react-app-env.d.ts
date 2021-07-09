@@ -38,7 +38,7 @@ type Feed = {
 type FeedEntry = GenericFeedEntry | OddsChangeFeedEntry;
 
 type GenericFeedEntry = {
-  type: "Fixture change" | "Bet stop" | "Bet start";
+  type: "fixture_change" | "bet_stop" | "bet_start";
   timestamp: number;
   status?: string;
   score?: string;
@@ -46,7 +46,7 @@ type GenericFeedEntry = {
 };
 
 type OddsChangeFeedEntry = {
-  type: "Odds change";
+  type: "odds_change";
   timestamp: number;
   status: string;
   score: string;
