@@ -35,7 +35,7 @@ type Feed = {
   entries: FeedEntry[];
 };
 
-type FeedEntry = GenericFeedEntry | OddsChangeFeedEntry;
+type FeedEntry = GenericFeedEntry | MarketChangeFeedEntry;
 
 type GenericFeedEntry = {
   type: "fixture_change" | "bet_stop" | "bet_start";
@@ -45,8 +45,8 @@ type GenericFeedEntry = {
   statistics?: Record<string, string>;
 };
 
-type OddsChangeFeedEntry = {
-  type: "odds_change";
+type MarketChangeFeedEntry = {
+  type: "odds_change" | "bet_settlement";
   timestamp: number;
   status: string;
   score: string;
@@ -60,6 +60,8 @@ type FeedMarket = {
 
 type FeedMarketSpecifier = {
   status: FeedMarketStatus;
+  voided: boolean;
+  settled: boolean;
   outcomes: Record<string, FeedMarketOutcome>;
 };
 
@@ -72,6 +74,7 @@ enum FeedMarketStatus {
 type FeedMarketOutcome = {
   name: string;
   odds: number;
+  result: boolean | null; // selected as settlement result or not, null if market not settled
   changedFromOdds?: number;
   active: boolean;
 };
