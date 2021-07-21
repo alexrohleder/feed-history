@@ -14,7 +14,7 @@ type SportEvent = {
   name: string;
   timestamp: number;
   markets: SportEventMarket[];
-  defaultMarketSelection: MarketSelection[];
+  defaultMarketSelection: MarketSelection[]; // markets visible by default in front-end
   sportTree: SportTree[];
 };
 

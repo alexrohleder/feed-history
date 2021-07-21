@@ -11,7 +11,7 @@ const STATUS_COLOR = ["", "#fecaca", "#fed7aa"];
 const INACTIVE_COLOR = "#e4e4e7";
 
 function EntriesTableCol({ entry, marketId, specifier, outcomeName }: Props) {
-  if (entry.type !== "Odds change") {
+  if (entry.type !== "odds_change") {
     return <td key={entry.timestamp} className="empty" />;
   }
 
