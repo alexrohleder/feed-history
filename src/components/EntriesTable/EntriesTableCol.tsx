@@ -16,10 +16,27 @@ function EntriesTableCol({ entry, marketId, specifier, outcomeName }: Props) {
   }
 
   const cols: ReactNode[] = [];
-  const specifierObj = entry.markets[marketId].specifiers[specifier];
-  const { outcomes, status } = specifierObj;
-  const outcome = outcomes[outcomeName];
+  const specifierObj = entry.markets[marketId]?.specifiers[specifier];
+  // const outcome = specifierObj?.outcomes?.[outcomeName];
 
+  if (!specifierObj) {
+    return <td key={entry.timestamp} colSpan={2} />;
+  }
+
+  let outcome;
+
+  for (const k in specifierObj.outcomes) {
+    if (specifierObj.outcomes[k].name === outcomeName) {
+      outcome = specifierObj.outcomes[k];
+      break;
+    }
+  }
+
+  if (!outcome) {
+    return <td key={entry.timestamp} colSpan={2} />;
+  }
+
+  const { status } = specifierObj;
   const odds = outcome.odds.toFixed(2);
   const changedFromOdds = outcome.changedFromOdds?.toFixed(2);
 

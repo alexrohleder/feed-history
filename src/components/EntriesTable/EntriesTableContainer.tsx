@@ -5,7 +5,7 @@ import usePage from "./hooks/usePage";
 
 function EntriesTableContainer() {
   const [page, setPage] = usePage();
-  const feed = useSWR<Feed>(`feed?page=${page}`);
+  const feed = useSWR<Feed>(`messages?pageIndex=${page}&pageSize=100`);
   const event = useSWR<SportEvent>("event");
 
   return (

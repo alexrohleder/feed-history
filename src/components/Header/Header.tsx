@@ -1,4 +1,3 @@
-import { format } from "date-fns";
 import { useEffect, useState } from "react";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import TreeMenu from "react-simple-tree-menu";
@@ -30,8 +29,7 @@ function Header() {
             onClick={() => setSportTreeVisibility(!isSportTreeVisible)}
           >
             <h2>{data!.name}</h2>
-            <h3>{format(data!.timestamp, "dd/MM/Y HH:mm:ss")} UTC</h3>(
-            {data!.urn})
+            <h3>{data!.timestamp} UTC</h3>({data!.urn})
           </button>
         </div>
         <div className="Header_Actions">

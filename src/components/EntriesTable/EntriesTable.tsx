@@ -25,6 +25,10 @@ function EntriesTable(props: Props) {
   const rows = [];
   const isSearchingOutcomes = search.outcomeTerms.length > 0;
 
+  if (!props.markets) {
+    return null; // todo: treat
+  }
+
   for (const market of props.markets) {
     if (!marketSelection.isSelected(market.id)) {
       continue;
@@ -122,7 +126,7 @@ function EntriesTable(props: Props) {
               key={entry.timestamp}
               colSpan={entry.type === "odds_change" ? 2 : 1}
             >
-              <div>{entry.timestamp}</div>
+              <div>{format(entry.timestamp, "dd/MM/Y HH:mm:ss")}</div>
               <div>{entry.type}</div>
               <div>{entry.status}</div>
               <div>{entry.score}</div>

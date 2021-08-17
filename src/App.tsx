@@ -7,11 +7,12 @@ import { SearchContextProvider } from "./context/SearchContext";
 
 const searchParams = new URLSearchParams(window.location.search);
 const event = searchParams.get("event");
+const bookmaker = searchParams.get("bookmaker");
 const noDelay = searchParams.get("noDelay");
 
 const config = {
   fetcher: async (key: string) => {
-    if (process.env.NODE_ENV !== "test") {
+    if (process.env.NODE_ENV === "test") {
       try {
         const page = key.includes("?")
           ? key.substring(0, key.indexOf("?"))
@@ -36,7 +37,10 @@ const config = {
       }
     }
 
-    return fetch(`/api/${event}/${key}`).then((res) => res.json());
+    const baseUrl = process.env.REACT_APP_SERVER_ADDR;
+    const [method, qs] = key.split('?');
+
+    return fetch(`${baseUrl}/${method}/${bookmaker}/${event}.json?${qs}`).then((res) => res.json());
   },
 
   suspense: true,
