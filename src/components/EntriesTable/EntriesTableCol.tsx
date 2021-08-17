@@ -39,6 +39,7 @@ function EntriesTableCol({ entry, marketId, specifier, outcomeName }: Props) {
   const { status } = specifierObj;
   const odds = outcome.odds.toFixed(2);
   const changedFromOdds = outcome.changedFromOdds?.toFixed(2);
+  const hasChangedOdds = changedFromOdds !== odds;
 
   const style = {
     // we apply inline styles so it appears on the exported xls
@@ -64,7 +65,7 @@ function EntriesTableCol({ entry, marketId, specifier, outcomeName }: Props) {
       style={style}
     >
       {odds}
-      {changedFromOdds && (
+      {hasChangedOdds && (
         <div
           className="outcome-odds-changed"
           title={`Odds changed from ${changedFromOdds} to ${odds}`}
