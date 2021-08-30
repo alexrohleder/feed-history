@@ -124,7 +124,11 @@ function EntriesTable(props: Props) {
           {props.entries.map((entry) => (
             <th
               key={entry.timestamp}
-              colSpan={entry.type === "odds_change" ? 2 : 1}
+              colSpan={
+                entry.type === "odds_change" || entry.type === "bet_settlement"
+                  ? 2
+                  : 1
+              }
             >
               <div>{format(entry.timestamp, "dd/MM/Y HH:mm:ss")}</div>
               <div>{entry.type}</div>
