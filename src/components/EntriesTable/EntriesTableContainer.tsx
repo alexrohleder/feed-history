@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ReactPaginate from "react-paginate";
 import useSWR from "swr";
 import EntriesTable from "./EntriesTable";
@@ -5,7 +6,8 @@ import usePage from "./hooks/usePage";
 
 function EntriesTableContainer() {
   const [page, setPage] = usePage();
-  const feed = useSWR<Feed>(`messages?pageIndex=${page}&pageSize=50`);
+  const [pageSize, setPageSize] = useState("50");
+  const feed = useSWR<Feed>(`messages?pageIndex=${page}&pageSize=${pageSize}`);
   const event = useSWR<SportEvent>("event");
 
   return (
@@ -24,6 +26,16 @@ function EntriesTableContainer() {
           marginPagesDisplayed={2}
           onPageChange={({ selected }) => setPage(selected)}
         />
+        <select
+          value={pageSize}
+          onChange={(event) => setPageSize(event.target.value)}
+        >
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="150">150</option>
+          <option value="200">200</option>
+        </select>
       </div>
     </>
   );

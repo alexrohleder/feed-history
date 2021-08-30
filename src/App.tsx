@@ -67,6 +67,14 @@ class App extends Component {
       );
     }
 
+    if (!event || !bookmaker) {
+      return (
+        <div className="AppErrorBoundary">
+          <div>Looks like you got a wrong URL, we are missing bookmaker or event IDs.</div>
+        </div>
+      );
+    }
+
     return (
       <div className="App">
         <SWRConfig value={config}>
