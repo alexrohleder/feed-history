@@ -1,6 +1,6 @@
 const feed: Feed = {
   currentPage: 0,
-  pageCount: 2,
+  totalPages: 2,
   entries: [],
 };
 
