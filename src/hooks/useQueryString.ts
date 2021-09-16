@@ -17,7 +17,7 @@ const setQueryStringValue = (
   value: string,
   queryString = window.location.search
 ) => {
-  const values = qs.parse(queryString);
+  const values = qs.parse(queryString.replace(/^\?/, ""));
   const newQsValue = qs.stringify({ ...values, [key]: value });
   setQueryStringWithoutPageReload(`?${newQsValue}`);
 };

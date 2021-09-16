@@ -60,7 +60,7 @@ function Header() {
         {isSportTreeVisible && (
           <div className="HeaderPanel HeaderPanel_SportTree">
             <TreeMenu
-              data={data!.sportTree}
+              data={[data!.sportTree]}
               onClickItem={({ key: urn }) => {
                 const currentSearch = window.location.search;
                 const searchParams = new URLSearchParams(currentSearch);
