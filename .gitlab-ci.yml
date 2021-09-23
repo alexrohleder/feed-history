@@ -7,6 +7,8 @@ cache:
     - node_modules/
 
 pages:
+  variables:
+    REACT_APP_GIT_VERSION: "$CI_COMMIT_REF_NAME-$CI_COMMIT_SHA"
   script:
     - yarn install
     - yarn build
